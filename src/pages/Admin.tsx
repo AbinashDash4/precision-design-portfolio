@@ -4,7 +4,10 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
-import { ArrowLeft, Plus, Edit, Trash2, Save, X, User, Briefcase, Code, Award, Mail, Settings, Upload, Image, FileText } from "lucide-react";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
+import { ArrowLeft, Plus, Edit, Trash2, Save, X, User, Briefcase, Code, Award, Mail, Settings, Upload, Image, FileText, GraduationCap, Calendar, Star } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Admin = () => {
@@ -13,8 +16,11 @@ const Admin = () => {
 
   const sections = [
     { id: 'overview', label: 'Overview', icon: User },
-    { id: 'projects', label: 'Projects', icon: Code },
+    { id: 'about', label: 'About Me', icon: User },
     { id: 'experience', label: 'Experience', icon: Briefcase },
+    { id: 'projects', label: 'Projects', icon: Code },
+    { id: 'skills', label: 'Skills', icon: Star },
+    { id: 'education', label: 'Education', icon: GraduationCap },
     { id: 'certifications', label: 'Certifications', icon: Award },
     { id: 'contact', label: 'Contact', icon: Mail },
     { id: 'media', label: 'Media', icon: Image },
@@ -25,7 +31,7 @@ const Admin = () => {
     personal: {
       name: 'Abinash Dash',
       tagline: 'Designing with Vision. Developing with Precision. Delivering with Impact.',
-      vision: 'Passionate about creating digital experiences that bridge creativity and technology...',
+      vision: 'I envision a future where technology seamlessly integrates with human creativity to solve complex problems. My goal is to bridge the gap between innovative design and robust development, creating digital solutions that are not only functional but also meaningful and accessible to everyone.',
       email: 'abinashdash2022@gift.edu.in',
       phone: '+91 7978825471',
       location: 'Binjhagiri, Khordha, Odisha'
@@ -34,16 +40,18 @@ const Admin = () => {
       {
         id: 1,
         title: 'Contacts Management System',
-        description: 'A comprehensive contact management application...',
+        description: 'A comprehensive contact management application with CRUD operations, search functionality, and user-friendly interface.',
         tech: ['Java', 'MySQL', 'Swing'],
-        status: 'Published'
+        status: 'Published',
+        features: ['CRUD Operations', 'Search & Filter', 'Data Export']
       },
       {
         id: 2,
         title: 'Face Detection System',
-        description: 'AI-powered face detection system...',
+        description: 'AI-powered face detection system using computer vision and machine learning algorithms with real-time processing.',
         tech: ['Python', 'OpenCV', 'TensorFlow'],
-        status: 'Published'
+        status: 'Published',
+        features: ['Real-time Detection', 'Multi-face Recognition', 'Performance Analytics']
       }
     ],
     experience: [
@@ -53,7 +61,39 @@ const Admin = () => {
         company: 'Center for Technology Transfer & Commercialization',
         duration: '45 days',
         period: '2024',
-        status: 'Published'
+        status: 'Published',
+        description: 'Specialized in deep learning and image processing. Developed computer vision projects and worked on AI model development with industry-standard practices.',
+        skills: ['Deep Learning', 'Image Processing', 'Computer Vision', 'AI Models', 'Python'],
+        achievements: [
+          'Developed 3 AI models with 95%+ accuracy',
+          'Implemented real-time image processing algorithms',
+          'Collaborated with senior developers on production systems'
+        ]
+      }
+    ],
+    skills: [
+      { id: 1, name: "Java", category: "Programming", level: "Advanced", logo: null },
+      { id: 2, name: "Python", category: "Programming", level: "Advanced", logo: null },
+      { id: 3, name: "React", category: "Frontend", level: "Intermediate", logo: null },
+      { id: 4, name: "UI/UX Design", category: "Design", level: "Advanced", logo: null },
+    ],
+    education: [
+      {
+        id: 1,
+        degree: 'B.Tech in Computer Science & Engineering (AI)',
+        institution: 'GIFT Autonomous College',
+        cgpa: '6.5',
+        year: '2025',
+        status: 'Current'
+      }
+    ],
+    certifications: [
+      {
+        id: 1,
+        title: 'Google UI/UX Certificate',
+        issuer: 'Coursera',
+        date: '2023',
+        type: 'certification'
       }
     ],
     media: [
@@ -63,13 +103,6 @@ const Admin = () => {
         type: 'image',
         url: '/placeholder-image.jpg',
         uploadDate: '2024-01-15'
-      },
-      {
-        id: 2,
-        name: 'Resume',
-        type: 'document',
-        url: '/resume.pdf',
-        uploadDate: '2024-01-10'
       }
     ]
   });
@@ -88,6 +121,19 @@ const Admin = () => {
       setPortfolioData(prev => ({
         ...prev,
         media: [...prev.media, newMedia]
+      }));
+    }
+  };
+
+  const handleSkillLogoUpload = (skillId: number, event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
+    if (file) {
+      const logoUrl = URL.createObjectURL(file);
+      setPortfolioData(prev => ({
+        ...prev,
+        skills: prev.skills.map(skill => 
+          skill.id === skillId ? { ...skill, logo: logoUrl } : skill
+        )
       }));
     }
   };
@@ -124,7 +170,7 @@ const Admin = () => {
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-gray-400 text-sm">Skills</p>
-                <p className="text-3xl font-bold text-neon-pink">12</p>
+                <p className="text-3xl font-bold text-neon-pink">{portfolioData.skills.length}</p>
               </div>
               <Award className="w-10 h-10 text-neon-pink" />
             </div>
@@ -181,6 +227,82 @@ const Admin = () => {
     </div>
   );
 
+  const renderAbout = () => (
+    <div className="space-y-6">
+      <div className="flex justify-between items-center">
+        <h3 className="text-2xl font-semibold text-white">About Me Section</h3>
+        <Button className="bg-gradient-to-r from-neon-blue to-neon-pink hover:from-neon-pink hover:to-neon-blue text-black font-semibold">
+          <Edit className="w-4 h-4 mr-2" />
+          Edit About
+        </Button>
+      </div>
+
+      <Card className="bg-black/90 backdrop-blur-xl border border-neon-pink/30 hover:border-neon-pink/50 transition-all duration-500">
+        <CardHeader>
+          <CardTitle className="text-neon-pink">Vision & Goals</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="space-y-4">
+            <div>
+              <Label className="text-gray-300">Vision Statement</Label>
+              <Textarea 
+                value={portfolioData.personal.vision}
+                className="mt-2 bg-gray-900/80 border-gray-700 text-white min-h-[120px]"
+                readOnly
+              />
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+    </div>
+  );
+
+  const renderExperience = () => (
+    <div className="space-y-6">
+      <div className="flex justify-between items-center">
+        <h3 className="text-2xl font-semibold text-white">Manage Experience</h3>
+        <Button className="bg-gradient-to-r from-neon-green to-neon-blue hover:from-neon-blue hover:to-neon-green text-black font-semibold">
+          <Plus className="w-4 h-4 mr-2" />
+          Add Experience
+        </Button>
+      </div>
+
+      <div className="grid gap-6">
+        {portfolioData.experience.map((exp) => (
+          <Card key={exp.id} className="bg-black/90 backdrop-blur-xl border border-gray-800 hover:border-neon-pink/50 transition-all duration-500">
+            <CardHeader>
+              <div className="flex justify-between items-start">
+                <div>
+                  <CardTitle className="text-white">{exp.title}</CardTitle>
+                  <CardDescription className="text-gray-400">{exp.company}</CardDescription>
+                  <p className="text-sm text-gray-500 mt-1">{exp.duration} • {exp.period}</p>
+                </div>
+                <div className="flex gap-2">
+                  <Badge variant="outline" className="border-neon-green/50 text-neon-green">
+                    {exp.status}
+                  </Badge>
+                </div>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <p className="text-gray-300 mb-4">{exp.description}</p>
+              <div className="flex gap-3">
+                <Button size="sm" variant="outline" className="border-neon-blue/50 text-neon-blue hover:bg-neon-blue/10">
+                  <Edit className="w-4 h-4 mr-2" />
+                  Edit
+                </Button>
+                <Button size="sm" variant="outline" className="border-neon-pink/50 text-neon-pink hover:bg-neon-pink/10">
+                  <Trash2 className="w-4 h-4 mr-2" />
+                  Delete
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
+        ))}
+      </div>
+    </div>
+  );
+
   const renderProjects = () => (
     <div className="space-y-6">
       <div className="flex justify-between items-center">
@@ -200,11 +322,9 @@ const Admin = () => {
                   <CardTitle className="text-white">{project.title}</CardTitle>
                   <CardDescription className="text-gray-400">{project.description}</CardDescription>
                 </div>
-                <div className="flex gap-2">
-                  <Badge variant="outline" className={`${project.status === 'Published' ? 'border-neon-green/50 text-neon-green' : 'border-neon-yellow/50 text-neon-yellow'}`}>
-                    {project.status}
-                  </Badge>
-                </div>
+                <Badge variant="outline" className="border-neon-green/50 text-neon-green">
+                  {project.status}
+                </Badge>
               </div>
             </CardHeader>
             <CardContent>
@@ -229,6 +349,198 @@ const Admin = () => {
           </Card>
         ))}
       </div>
+    </div>
+  );
+
+  const renderSkills = () => (
+    <div className="space-y-6">
+      <div className="flex justify-between items-center">
+        <h3 className="text-2xl font-semibold text-white">Manage Skills</h3>
+        <Button className="bg-gradient-to-r from-neon-purple to-neon-pink hover:from-neon-pink hover:to-neon-purple text-black font-semibold">
+          <Plus className="w-4 h-4 mr-2" />
+          Add Skill
+        </Button>
+      </div>
+
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {portfolioData.skills.map((skill) => (
+          <Card key={skill.id} className="bg-black/90 backdrop-blur-xl border border-gray-800 hover:border-neon-blue/50 transition-all duration-500">
+            <CardHeader>
+              <CardTitle className="text-white flex items-center justify-between">
+                <span>{skill.name}</span>
+                {skill.logo && (
+                  <img src={skill.logo} alt={skill.name} className="w-8 h-8 rounded" />
+                )}
+              </CardTitle>
+              <CardDescription className="text-gray-400">{skill.category}</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-4">
+                <Badge variant="outline" className="border-neon-green/50 text-neon-green">
+                  {skill.level}
+                </Badge>
+                
+                <div>
+                  <Label className="text-sm text-gray-300 mb-2 block">Upload Logo</Label>
+                  <input
+                    type="file"
+                    accept="image/*"
+                    onChange={(e) => handleSkillLogoUpload(skill.id, e)}
+                    className="hidden"
+                    id={`skill-logo-${skill.id}`}
+                  />
+                  <Button
+                    size="sm"
+                    variant="outline"
+                    onClick={() => document.getElementById(`skill-logo-${skill.id}`)?.click()}
+                    className="border-neon-yellow/50 text-neon-yellow hover:bg-neon-yellow/10 w-full"
+                  >
+                    <Upload className="w-4 h-4 mr-2" />
+                    {skill.logo ? 'Change Logo' : 'Add Logo'}
+                  </Button>
+                </div>
+                
+                <div className="flex gap-2">
+                  <Button size="sm" variant="outline" className="border-neon-blue/50 text-neon-blue hover:bg-neon-blue/10 flex-1">
+                    <Edit className="w-4 h-4 mr-2" />
+                    Edit
+                  </Button>
+                  <Button size="sm" variant="outline" className="border-neon-pink/50 text-neon-pink hover:bg-neon-pink/10 flex-1">
+                    <Trash2 className="w-4 h-4 mr-2" />
+                    Delete
+                  </Button>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        ))}
+      </div>
+    </div>
+  );
+
+  const renderEducation = () => (
+    <div className="space-y-6">
+      <div className="flex justify-between items-center">
+        <h3 className="text-2xl font-semibold text-white">Manage Education</h3>
+        <Button className="bg-gradient-to-r from-neon-blue to-neon-green hover:from-neon-green hover:to-neon-blue text-black font-semibold">
+          <Plus className="w-4 h-4 mr-2" />
+          Add Education
+        </Button>
+      </div>
+
+      <div className="grid gap-6">
+        {portfolioData.education.map((edu) => (
+          <Card key={edu.id} className="bg-black/90 backdrop-blur-xl border border-gray-800 hover:border-neon-blue/50 transition-all duration-500">
+            <CardHeader>
+              <div className="flex justify-between items-start">
+                <div>
+                  <CardTitle className="text-white">{edu.degree}</CardTitle>
+                  <CardDescription className="text-gray-400">{edu.institution}</CardDescription>
+                  <p className="text-sm text-gray-500 mt-1">CGPA: {edu.cgpa} | Year: {edu.year}</p>
+                </div>
+                <Badge variant="outline" className="border-neon-green/50 text-neon-green">
+                  {edu.status}
+                </Badge>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <div className="flex gap-3">
+                <Button size="sm" variant="outline" className="border-neon-blue/50 text-neon-blue hover:bg-neon-blue/10">
+                  <Edit className="w-4 h-4 mr-2" />
+                  Edit
+                </Button>
+                <Button size="sm" variant="outline" className="border-neon-pink/50 text-neon-pink hover:bg-neon-pink/10">
+                  <Trash2 className="w-4 h-4 mr-2" />
+                  Delete
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
+        ))}
+      </div>
+    </div>
+  );
+
+  const renderCertifications = () => (
+    <div className="space-y-6">
+      <div className="flex justify-between items-center">
+        <h3 className="text-2xl font-semibold text-white">Manage Certifications</h3>
+        <Button className="bg-gradient-to-r from-neon-yellow to-neon-pink hover:from-neon-pink hover:to-neon-yellow text-black font-semibold">
+          <Plus className="w-4 h-4 mr-2" />
+          Add Certification
+        </Button>
+      </div>
+
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {portfolioData.certifications.map((cert) => (
+          <Card key={cert.id} className="bg-black/90 backdrop-blur-xl border border-gray-800 hover:border-neon-yellow/50 transition-all duration-500">
+            <CardHeader>
+              <CardTitle className="text-white flex items-center">
+                <Award className="w-5 h-5 mr-2 text-neon-yellow" />
+                {cert.title}
+              </CardTitle>
+              <CardDescription className="text-gray-400">
+                {cert.issuer} • {cert.date}
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="flex gap-2">
+                <Button size="sm" variant="outline" className="border-neon-blue/50 text-neon-blue hover:bg-neon-blue/10 flex-1">
+                  <Edit className="w-4 h-4 mr-2" />
+                  Edit
+                </Button>
+                <Button size="sm" variant="outline" className="border-neon-pink/50 text-neon-pink hover:bg-neon-pink/10 flex-1">
+                  <Trash2 className="w-4 h-4 mr-2" />
+                  Delete
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
+        ))}
+      </div>
+    </div>
+  );
+
+  const renderContact = () => (
+    <div className="space-y-6">
+      <div className="flex justify-between items-center">
+        <h3 className="text-2xl font-semibold text-white">Contact Information</h3>
+        <Button className="bg-gradient-to-r from-neon-green to-neon-blue hover:from-neon-blue hover:to-neon-green text-black font-semibold">
+          <Edit className="w-4 h-4 mr-2" />
+          Edit Contact
+        </Button>
+      </div>
+
+      <Card className="bg-black/90 backdrop-blur-xl border border-neon-blue/30 hover:border-neon-blue/50 transition-all duration-500">
+        <CardContent className="p-6">
+          <div className="grid md:grid-cols-2 gap-6">
+            <div>
+              <Label className="text-gray-300">Phone</Label>
+              <Input 
+                value={portfolioData.personal.phone}
+                className="mt-2 bg-gray-900/80 border-gray-700 text-white"
+                readOnly
+              />
+            </div>
+            <div>
+              <Label className="text-gray-300">Email</Label>
+              <Input 
+                value={portfolioData.personal.email}
+                className="mt-2 bg-gray-900/80 border-gray-700 text-white"
+                readOnly
+              />
+            </div>
+            <div className="md:col-span-2">
+              <Label className="text-gray-300">Location</Label>
+              <Input 
+                value={portfolioData.personal.location}
+                className="mt-2 bg-gray-900/80 border-gray-700 text-white"
+                readOnly
+              />
+            </div>
+          </div>
+        </CardContent>
+      </Card>
     </div>
   );
 
@@ -291,22 +603,43 @@ const Admin = () => {
     </div>
   );
 
+  const renderSettings = () => (
+    <div className="space-y-6">
+      <h3 className="text-2xl font-semibold text-white">Settings</h3>
+      <Card className="bg-black/90 backdrop-blur-xl border border-gray-800">
+        <CardHeader>
+          <CardTitle className="text-neon-blue">Application Settings</CardTitle>
+          <CardDescription className="text-gray-400">Configure your portfolio settings</CardDescription>
+        </CardHeader>
+        <CardContent>
+          <p className="text-gray-400">Settings panel coming soon...</p>
+        </CardContent>
+      </Card>
+    </div>
+  );
+
   const renderContent = () => {
     switch (activeSection) {
       case 'overview':
         return renderOverview();
+      case 'about':
+        return renderAbout();
+      case 'experience':
+        return renderExperience();
       case 'projects':
         return renderProjects();
+      case 'skills':
+        return renderSkills();
+      case 'education':
+        return renderEducation();
+      case 'certifications':
+        return renderCertifications();
+      case 'contact':
+        return renderContact();
       case 'media':
         return renderMedia();
-      case 'experience':
-        return <div className="text-center text-gray-400 py-12">Experience management coming soon...</div>;
-      case 'certifications':
-        return <div className="text-center text-gray-400 py-12">Certifications management coming soon...</div>;
-      case 'contact':
-        return <div className="text-center text-gray-400 py-12">Contact management coming soon...</div>;
       case 'settings':
-        return <div className="text-center text-gray-400 py-12">Settings coming soon...</div>;
+        return renderSettings();
       default:
         return renderOverview();
     }

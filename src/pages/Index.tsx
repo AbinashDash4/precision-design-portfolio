@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
-import { ArrowUp, Mail, Phone, MapPin, Download, ExternalLink, Github, Linkedin, Code, Palette, Briefcase, GraduationCap, Award, Calendar, Star, Settings } from "lucide-react";
+import { ArrowUp, Mail, Phone, MapPin, Download, ExternalLink, Github, Linkedin, Code, Palette, Briefcase, GraduationCap, Award, Calendar, Star, Settings, Home, User, FolderOpen, Zap, BookOpen, Trophy, MessageCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Index = () => {
@@ -38,6 +38,24 @@ const Index = () => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
+
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const navigationItems = [
+    { id: 'hero', label: 'Home', icon: Home },
+    { id: 'about', label: 'About', icon: User },
+    { id: 'experience', label: 'Experience', icon: Briefcase },
+    { id: 'projects', label: 'Projects', icon: FolderOpen },
+    { id: 'skills', label: 'Skills', icon: Zap },
+    { id: 'education', label: 'Education', icon: BookOpen },
+    { id: 'certifications', label: 'Certifications', icon: Trophy },
+    { id: 'contact', label: 'Contact', icon: MessageCircle },
+  ];
 
   const skillsData = [
     { name: "Java", category: "Programming", level: "Advanced", icon: Code },
@@ -142,20 +160,41 @@ const Index = () => {
     <div className="min-h-screen bg-black text-white overflow-x-hidden">
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-xl border-b border-neon-blue/20">
-        <div className="container mx-auto px-4 py-3 flex justify-between items-center">
-          <div className="flex items-center">
-            <div className="w-12 h-12 rounded-full bg-gradient-to-r from-neon-blue via-neon-pink to-neon-green p-0.5 animate-pulse-neon">
-              <div className="w-full h-full rounded-full bg-black flex items-center justify-center">
-                <span className="text-sm font-bold gradient-text">ABINASH</span>
+        <div className="container mx-auto px-4 py-3">
+          <div className="flex justify-between items-center">
+            {/* Logo */}
+            <div className="flex items-center">
+              <div className="w-12 h-12 rounded-full bg-gradient-to-r from-neon-blue via-neon-pink to-neon-green p-0.5 animate-pulse-neon">
+                <div className="w-full h-full rounded-full bg-black flex items-center justify-center">
+                  <span className="text-sm font-bold gradient-text">ABINASH</span>
+                </div>
               </div>
             </div>
+
+            {/* Navigation */}
+            <nav className="hidden md:flex items-center space-x-1">
+              {navigationItems.map((item) => (
+                <Button
+                  key={item.id}
+                  variant="ghost"
+                  size="sm"
+                  onClick={() => scrollToSection(item.id)}
+                  className="text-gray-300 hover:text-neon-blue hover:bg-neon-blue/10 transition-all duration-300"
+                >
+                  <item.icon className="w-4 h-4 mr-2" />
+                  {item.label}
+                </Button>
+              ))}
+            </nav>
+
+            {/* Admin Button */}
+            <Link to="/admin">
+              <Button variant="outline" size="sm" className="border-neon-blue/50 text-neon-blue hover:bg-neon-blue/10 hover:border-neon-blue transition-all duration-300">
+                <Settings className="w-4 h-4 mr-2" />
+                Admin
+              </Button>
+            </Link>
           </div>
-          <Link to="/admin">
-            <Button variant="outline" size="sm" className="border-neon-blue/50 text-neon-blue hover:bg-neon-blue/10 hover:border-neon-blue transition-all duration-300">
-              <Settings className="w-4 h-4 mr-2" />
-              Admin
-            </Button>
-          </Link>
         </div>
       </header>
 
@@ -217,54 +256,25 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 gradient-text">About Me</h2>
           
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
-            <Card className="bg-black/80 backdrop-blur-xl border border-neon-blue/30 hover:border-neon-blue/60 transition-all duration-500 group">
-              <CardHeader>
-                <CardTitle className="text-neon-blue flex items-center group-hover:text-neon-pink transition-colors duration-300">
-                  <GraduationCap className="w-6 h-6 mr-3" />
-                  Education
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-6">
-                <div className="p-4 rounded-lg bg-neon-blue/5 border border-neon-blue/20">
-                  <h4 className="font-semibold text-white mb-2">B.Tech in Computer Science & Engineering (AI)</h4>
-                  <p className="text-gray-300 mb-1">GIFT Autonomous College</p>
-                  <p className="text-neon-green font-medium">CGPA: 6.5 | Expected: 2025</p>
-                </div>
-                <Separator className="bg-neon-blue/20" />
-                <div className="space-y-3">
-                  <div className="p-3 rounded bg-gray-900/50">
-                    <h4 className="font-semibold text-white">CHSE Intermediate</h4>
-                    <p className="text-gray-400">2022 | 52%</p>
-                  </div>
-                  <div className="p-3 rounded bg-gray-900/50">
-                    <h4 className="font-semibold text-white">Matriculation</h4>
-                    <p className="text-gray-400">2020 | 40%</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-black/80 backdrop-blur-xl border border-neon-pink/30 hover:border-neon-pink/60 transition-all duration-500 group">
-              <CardHeader>
-                <CardTitle className="text-neon-pink flex items-center group-hover:text-neon-blue transition-colors duration-300">
-                  <Star className="w-6 h-6 mr-3" />
-                  Vision & Goals
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-300 leading-relaxed mb-4">
-                  I envision a future where technology seamlessly integrates with human creativity to solve complex problems. 
-                  My goal is to bridge the gap between innovative design and robust development, creating digital solutions 
-                  that are not only functional but also meaningful and accessible to everyone.
-                </p>
-                <p className="text-gray-300 leading-relaxed">
-                  Through continuous learning in AI, machine learning, and user experience design, I aim to contribute to 
-                  projects that make a positive impact on society while pushing the boundaries of what's possible in technology.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
+          <Card className="bg-black/80 backdrop-blur-xl border border-neon-pink/30 hover:border-neon-pink/60 transition-all duration-500 group max-w-4xl mx-auto">
+            <CardHeader>
+              <CardTitle className="text-neon-pink flex items-center group-hover:text-neon-blue transition-colors duration-300">
+                <Star className="w-6 h-6 mr-3" />
+                Vision & Goals
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-gray-300 leading-relaxed mb-4 text-lg">
+                I envision a future where technology seamlessly integrates with human creativity to solve complex problems. 
+                My goal is to bridge the gap between innovative design and robust development, creating digital solutions 
+                that are not only functional but also meaningful and accessible to everyone.
+              </p>
+              <p className="text-gray-300 leading-relaxed text-lg">
+                Through continuous learning in AI, machine learning, and user experience design, I aim to contribute to 
+                projects that make a positive impact on society while pushing the boundaries of what's possible in technology.
+              </p>
+            </CardContent>
+          </Card>
         </div>
       </section>
 
