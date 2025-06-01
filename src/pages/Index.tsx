@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -269,83 +268,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Skills Section */}
-      <section id="skills" className="py-20">
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 gradient-text">Skills & Expertise</h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {skillsData.map((skill, index) => (
-              <Card key={index} className="bg-black/80 backdrop-blur-xl border border-gray-800 hover:border-neon-blue/50 transition-all duration-500 hover:scale-105 group cursor-pointer">
-                <CardContent className="p-6 text-center">
-                  <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-r from-neon-blue/20 to-neon-pink/20 flex items-center justify-center group-hover:from-neon-blue/40 group-hover:to-neon-pink/40 transition-all duration-300">
-                    <skill.icon className="w-8 h-8 text-neon-blue group-hover:text-neon-pink transition-colors duration-300" />
-                  </div>
-                  <h3 className="font-semibold text-white mb-3 group-hover:text-neon-blue transition-colors duration-300">{skill.name}</h3>
-                  <Badge variant="secondary" className="mb-3 bg-gray-900/80 text-gray-300 border border-gray-700">
-                    {skill.category}
-                  </Badge>
-                  <p className="text-sm font-medium text-neon-green">{skill.level}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Projects Section */}
-      <section id="projects" className="py-20 bg-gradient-to-b from-gray-900/50 to-black">
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 gradient-text">Featured Projects</h2>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project, index) => (
-              <Card key={index} className="bg-black/90 backdrop-blur-xl border border-gray-800 hover:border-neon-green/50 transition-all duration-500 hover:scale-105 group">
-                <CardHeader>
-                  <CardTitle className="text-white group-hover:text-neon-green transition-colors duration-300">{project.title}</CardTitle>
-                  <CardDescription className="text-gray-400 leading-relaxed">
-                    {project.description}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-6">
-                    <div>
-                      <h4 className="text-sm font-semibold text-neon-pink mb-3">Key Features</h4>
-                      <ul className="text-sm text-gray-300 space-y-2">
-                        {project.features.map((feature, featureIndex) => (
-                          <li key={featureIndex} className="flex items-center">
-                            <div className="w-2 h-2 bg-neon-blue rounded-full mr-3"></div>
-                            {feature}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                    <div className="flex flex-wrap gap-2">
-                      {project.tech.map((tech, techIndex) => (
-                        <Badge key={techIndex} variant="outline" className="border-neon-blue/30 text-neon-blue bg-neon-blue/5">
-                          {tech}
-                        </Badge>
-                      ))}
-                    </div>
-                    <div className="flex gap-3">
-                      <Button size="sm" variant="outline" className="border-neon-blue/50 text-neon-blue hover:bg-neon-blue/10 flex-1">
-                        <ExternalLink className="w-4 h-4 mr-2" />
-                        Demo
-                      </Button>
-                      <Button size="sm" variant="outline" className="border-neon-green/50 text-neon-green hover:bg-neon-green/10 flex-1">
-                        <Github className="w-4 h-4 mr-2" />
-                        Code
-                      </Button>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Enhanced Experience Section */}
+      {/* Experience Section */}
       <section id="experience" className="py-20">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 gradient-text">Professional Experience</h2>
@@ -406,6 +329,116 @@ const Index = () => {
               </Card>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Projects Section */}
+      <section id="projects" className="py-20 bg-gradient-to-b from-gray-900/50 to-black">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 gradient-text">Featured Projects</h2>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {projects.map((project, index) => (
+              <Card key={index} className="bg-black/90 backdrop-blur-xl border border-gray-800 hover:border-neon-green/50 transition-all duration-500 hover:scale-105 group">
+                <CardHeader>
+                  <CardTitle className="text-white group-hover:text-neon-green transition-colors duration-300">{project.title}</CardTitle>
+                  <CardDescription className="text-gray-400 leading-relaxed">
+                    {project.description}
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-6">
+                    <div>
+                      <h4 className="text-sm font-semibold text-neon-pink mb-3">Key Features</h4>
+                      <ul className="text-sm text-gray-300 space-y-2">
+                        {project.features.map((feature, featureIndex) => (
+                          <li key={featureIndex} className="flex items-center">
+                            <div className="w-2 h-2 bg-neon-blue rounded-full mr-3"></div>
+                            {feature}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div className="flex flex-wrap gap-2">
+                      {project.tech.map((tech, techIndex) => (
+                        <Badge key={techIndex} variant="outline" className="border-neon-blue/30 text-neon-blue bg-neon-blue/5">
+                          {tech}
+                        </Badge>
+                      ))}
+                    </div>
+                    <div className="flex gap-3">
+                      <Button size="sm" variant="outline" className="border-neon-blue/50 text-neon-blue hover:bg-neon-blue/10 flex-1">
+                        <ExternalLink className="w-4 h-4 mr-2" />
+                        Demo
+                      </Button>
+                      <Button size="sm" variant="outline" className="border-neon-green/50 text-neon-green hover:bg-neon-green/10 flex-1">
+                        <Github className="w-4 h-4 mr-2" />
+                        Code
+                      </Button>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Skills Section */}
+      <section id="skills" className="py-20">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 gradient-text">Skills & Expertise</h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            {skillsData.map((skill, index) => (
+              <Card key={index} className="bg-black/80 backdrop-blur-xl border border-gray-800 hover:border-neon-blue/50 transition-all duration-500 hover:scale-105 group cursor-pointer">
+                <CardContent className="p-6 text-center">
+                  <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-r from-neon-blue/20 to-neon-pink/20 flex items-center justify-center group-hover:from-neon-blue/40 group-hover:to-neon-pink/40 transition-all duration-300">
+                    <skill.icon className="w-8 h-8 text-neon-blue group-hover:text-neon-pink transition-colors duration-300" />
+                  </div>
+                  <h3 className="font-semibold text-white mb-3 group-hover:text-neon-blue transition-colors duration-300">{skill.name}</h3>
+                  <Badge variant="secondary" className="mb-3 bg-gray-900/80 text-gray-300 border border-gray-700">
+                    {skill.category}
+                  </Badge>
+                  <p className="text-sm font-medium text-neon-green">{skill.level}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Education Section */}
+      <section id="education" className="py-20 bg-gradient-to-b from-black to-gray-900/50">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 gradient-text">Education</h2>
+          
+          <Card className="bg-black/80 backdrop-blur-xl border border-neon-blue/30 hover:border-neon-blue/60 transition-all duration-500 group max-w-4xl mx-auto">
+            <CardHeader>
+              <CardTitle className="text-neon-blue flex items-center group-hover:text-neon-pink transition-colors duration-300">
+                <GraduationCap className="w-6 h-6 mr-3" />
+                Academic Journey
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-6">
+              <div className="p-4 rounded-lg bg-neon-blue/5 border border-neon-blue/20">
+                <h4 className="font-semibold text-white mb-2">B.Tech in Computer Science & Engineering (AI)</h4>
+                <p className="text-gray-300 mb-1">GIFT Autonomous College</p>
+                <p className="text-neon-green font-medium">CGPA: 6.5 | Expected: 2025</p>
+              </div>
+              <Separator className="bg-neon-blue/20" />
+              <div className="space-y-3">
+                <div className="p-3 rounded bg-gray-900/50">
+                  <h4 className="font-semibold text-white">CHSE Intermediate</h4>
+                  <p className="text-gray-400">2022 | 52%</p>
+                </div>
+                <div className="p-3 rounded bg-gray-900/50">
+                  <h4 className="font-semibold text-white">Matriculation</h4>
+                  <p className="text-gray-400">2020 | 40%</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
         </div>
       </section>
 
