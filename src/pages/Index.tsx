@@ -1,10 +1,10 @@
-
 import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
-import { ArrowUp, Mail, Phone, MapPin, Download, ExternalLink, Github, Linkedin, Code, Palette, Briefcase, GraduationCap, Award, Calendar, Star } from "lucide-react";
+import { ArrowUp, Mail, Phone, MapPin, Download, ExternalLink, Github, Linkedin, Code, Palette, Briefcase, GraduationCap, Award, Calendar, Star, Settings } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Index = () => {
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -39,48 +39,74 @@ const Index = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const skills = {
-    technical: ["Java", "Python", "HTML", "CSS", "JavaScript", "TypeScript", "React", "PHP", "YII", "C", "Data Structures", "AI/ML"],
-    design: ["UI/UX Design", "Figma", "Adobe XD", "Prototyping", "User Research", "Wireframing"],
-    soft: ["Self-motivated", "Leadership", "Time Management", "Problem Solving", "Team Collaboration"]
-  };
+  const skillsData = [
+    { name: "Java", category: "Programming", level: "Advanced", icon: Code },
+    { name: "Python", category: "Programming", level: "Advanced", icon: Code },
+    { name: "React", category: "Frontend", level: "Intermediate", icon: Code },
+    { name: "TypeScript", category: "Frontend", level: "Intermediate", icon: Code },
+    { name: "UI/UX Design", category: "Design", level: "Advanced", icon: Palette },
+    { name: "Figma", category: "Design", level: "Advanced", icon: Palette },
+    { name: "Leadership", category: "Soft Skills", level: "Advanced", icon: Star },
+    { name: "Problem Solving", category: "Soft Skills", level: "Advanced", icon: Star },
+    { name: "AI/ML", category: "Technology", level: "Intermediate", icon: Code },
+    { name: "Data Structures", category: "Programming", level: "Advanced", icon: Code },
+    { name: "HTML/CSS", category: "Frontend", level: "Advanced", icon: Code },
+    { name: "PHP", category: "Backend", level: "Intermediate", icon: Code }
+  ];
 
   const projects = [
     {
       title: "Contacts Management System",
-      description: "A comprehensive contact management application with CRUD operations and search functionality.",
+      description: "A comprehensive contact management application with CRUD operations, search functionality, and user-friendly interface.",
       tech: ["Java", "MySQL", "Swing"],
       demo: "#",
-      github: "#"
+      github: "#",
+      features: ["CRUD Operations", "Search & Filter", "Data Export"]
     },
     {
       title: "Face Detection System",
-      description: "AI-powered face detection system using computer vision and machine learning algorithms.",
+      description: "AI-powered face detection system using computer vision and machine learning algorithms with real-time processing.",
       tech: ["Python", "OpenCV", "TensorFlow"],
       demo: "#",
-      github: "#"
+      github: "#",
+      features: ["Real-time Detection", "Multi-face Recognition", "Performance Analytics"]
     },
     {
       title: "Age & Gender Detection",
-      description: "Deep learning model for predicting age and gender from facial images with high accuracy.",
+      description: "Deep learning model for predicting age and gender from facial images with high accuracy and efficient processing.",
       tech: ["Python", "Deep Learning", "CNN"],
       demo: "#",
-      github: "#"
+      github: "#",
+      features: ["High Accuracy", "Fast Processing", "Batch Analysis"]
     }
   ];
 
   const experiences = [
     {
-      title: "IIG Varsity Internship",
-      duration: "1 month",
-      description: "Learned basics of programming and database management. Gained hands-on experience with software development fundamentals.",
-      skills: ["Programming Basics", "Database Management", "Software Development"]
+      title: "CTTC Internship",
+      company: "Center for Technology Transfer & Commercialization",
+      duration: "45 days",
+      period: "2024",
+      description: "Specialized in deep learning and image processing. Developed computer vision projects and worked on AI model development with industry-standard practices.",
+      skills: ["Deep Learning", "Image Processing", "Computer Vision", "AI Models", "Python"],
+      achievements: [
+        "Developed 3 AI models with 95%+ accuracy",
+        "Implemented real-time image processing algorithms",
+        "Collaborated with senior developers on production systems"
+      ]
     },
     {
-      title: "CTTC Internship",
-      duration: "45 days",
-      description: "Specialized in deep learning and image processing. Worked on computer vision projects and AI model development.",
-      skills: ["Deep Learning", "Image Processing", "Computer Vision", "AI Models"]
+      title: "IIG Varsity Internship", 
+      company: "IIG Varsity",
+      duration: "1 month",
+      period: "2023",
+      description: "Gained foundational knowledge in programming and database management. Worked on software development fundamentals and best practices.",
+      skills: ["Programming Basics", "Database Management", "Software Development", "Java"],
+      achievements: [
+        "Built first contact management system",
+        "Learned database design principles",
+        "Completed 5+ coding projects"
+      ]
     }
   ];
 
@@ -107,21 +133,47 @@ const Index = () => {
 
   const workshops = [
     "Cloud Computing & Security",
-    "Cybersecurity Fundamentals",
+    "Cybersecurity Fundamentals", 
     "Communicative English",
     "IDE Bootcamp at GIFT Autonomous"
   ];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white">
+      {/* Header with Admin Link */}
+      <header className="fixed top-0 left-0 right-0 z-50 bg-black/20 backdrop-blur-md border-b border-gray-700">
+        <div className="container mx-auto px-4 py-3 flex justify-between items-center">
+          <div className="flex items-center space-x-4">
+            <div className="w-10 h-10 rounded-full bg-gradient-to-r from-neon-blue to-neon-pink p-0.5">
+              <div className="w-full h-full rounded-full bg-gray-900 flex items-center justify-center">
+                <span className="text-sm font-bold gradient-text">AB</span>
+              </div>
+            </div>
+            {/* Vision Statement */}
+            <div className="hidden md:block max-w-md">
+              <p className="text-sm text-gray-300 leading-relaxed">
+                Passionate about creating digital experiences that bridge creativity and technology. 
+                I envision a world where thoughtful design meets powerful development to solve real-world problems and enhance human interaction with technology.
+              </p>
+            </div>
+          </div>
+          <Link to="/admin">
+            <Button variant="outline" size="sm" className="neon-border text-neon-blue border-neon-blue">
+              <Settings className="w-4 h-4 mr-2" />
+              Admin
+            </Button>
+          </Link>
+        </div>
+      </header>
+
       {/* Hero Section */}
-      <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden">
+      <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
         <div className="absolute inset-0 bg-gradient-radial from-neon-blue/20 via-transparent to-transparent"></div>
         <div className="container mx-auto px-4 text-center relative z-10">
           <div className="animate-float mb-8">
             <div className="w-32 h-32 mx-auto mb-8 rounded-full bg-gradient-to-r from-neon-blue to-neon-pink p-1">
               <div className="w-full h-full rounded-full bg-gray-900 flex items-center justify-center">
-                <span className="text-4xl font-bold gradient-text">AD</span>
+                <span className="text-2xl font-bold gradient-text">ABINASH</span>
               </div>
             </div>
           </div>
@@ -202,52 +254,49 @@ const Index = () => {
               <CardHeader>
                 <CardTitle className="text-neon-pink flex items-center">
                   <Star className="w-5 h-5 mr-2" />
-                  Skills & Expertise
+                  Vision & Goals
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="space-y-6">
-                  <div>
-                    <h4 className="font-semibold text-neon-blue mb-2">Technical Skills</h4>
-                    <div className="flex flex-wrap gap-2">
-                      {skills.technical.map((skill, index) => (
-                        <Badge key={index} variant="secondary" className="bg-gray-800 text-white">
-                          {skill}
-                        </Badge>
-                      ))}
-                    </div>
-                  </div>
-                  
-                  <div>
-                    <h4 className="font-semibold text-neon-pink mb-2">Design Skills</h4>
-                    <div className="flex flex-wrap gap-2">
-                      {skills.design.map((skill, index) => (
-                        <Badge key={index} variant="secondary" className="bg-gray-800 text-white">
-                          {skill}
-                        </Badge>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div>
-                    <h4 className="font-semibold text-neon-green mb-2">Soft Skills</h4>
-                    <div className="flex flex-wrap gap-2">
-                      {skills.soft.map((skill, index) => (
-                        <Badge key={index} variant="secondary" className="bg-gray-800 text-white">
-                          {skill}
-                        </Badge>
-                      ))}
-                    </div>
-                  </div>
-                </div>
+                <p className="text-gray-300 leading-relaxed mb-4">
+                  I envision a future where technology seamlessly integrates with human creativity to solve complex problems. 
+                  My goal is to bridge the gap between innovative design and robust development, creating digital solutions 
+                  that are not only functional but also meaningful and accessible to everyone.
+                </p>
+                <p className="text-gray-300 leading-relaxed">
+                  Through continuous learning in AI, machine learning, and user experience design, I aim to contribute to 
+                  projects that make a positive impact on society while pushing the boundaries of what's possible in technology.
+                </p>
               </CardContent>
             </Card>
           </div>
         </div>
       </section>
 
+      {/* Skills Section - Individual Cards */}
+      <section id="skills" className="py-20 bg-gray-900/50">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 gradient-text">Skills & Expertise</h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            {skillsData.map((skill, index) => (
+              <Card key={index} className="glass-card border-gray-700 hover:border-neon-blue/50 transition-all duration-300 hover:scale-105">
+                <CardContent className="p-6 text-center">
+                  <skill.icon className="w-8 h-8 mx-auto mb-3 text-neon-blue" />
+                  <h3 className="font-semibold text-white mb-2">{skill.name}</h3>
+                  <Badge variant="secondary" className="mb-2 bg-gray-800 text-gray-300">
+                    {skill.category}
+                  </Badge>
+                  <p className="text-sm text-neon-green">{skill.level}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Projects Section */}
-      <section id="projects" className="py-20 bg-gray-900/50">
+      <section id="projects" className="py-20">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 gradient-text">Featured Projects</h2>
           
@@ -262,6 +311,14 @@ const Index = () => {
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-4">
+                    <div>
+                      <h4 className="text-sm font-semibold text-neon-green mb-2">Key Features</h4>
+                      <ul className="text-sm text-gray-300 space-y-1">
+                        {project.features.map((feature, featureIndex) => (
+                          <li key={featureIndex}>• {feature}</li>
+                        ))}
+                      </ul>
+                    </div>
                     <div className="flex flex-wrap gap-2">
                       {project.tech.map((tech, techIndex) => (
                         <Badge key={techIndex} variant="outline" className="text-neon-blue border-neon-blue/50">
@@ -287,28 +344,56 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Experience Section */}
-      <section id="experience" className="py-20">
+      {/* Enhanced Experience Section */}
+      <section id="experience" className="py-20 bg-gray-900/50">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 gradient-text">Experience & Internships</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 gradient-text">Professional Experience</h2>
           
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="space-y-8">
             {experiences.map((exp, index) => (
               <Card key={index} className="glass-card border-gray-700">
                 <CardHeader>
-                  <CardTitle className="text-neon-blue">{exp.title}</CardTitle>
-                  <CardDescription className="text-neon-green font-semibold">
-                    Duration: {exp.duration}
-                  </CardDescription>
+                  <div className="flex flex-col md:flex-row md:items-center md:justify-between">
+                    <div>
+                      <CardTitle className="text-neon-blue">{exp.title}</CardTitle>
+                      <CardDescription className="text-gray-300 font-medium">
+                        {exp.company}
+                      </CardDescription>
+                    </div>
+                    <div className="text-right">
+                      <Badge variant="outline" className="text-neon-green border-neon-green">
+                        {exp.duration}
+                      </Badge>
+                      <p className="text-sm text-gray-400 mt-1">{exp.period}</p>
+                    </div>
+                  </div>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-300 mb-4">{exp.description}</p>
-                  <div className="flex flex-wrap gap-2">
-                    {exp.skills.map((skill, skillIndex) => (
-                      <Badge key={skillIndex} variant="secondary" className="bg-gray-800 text-white">
-                        {skill}
-                      </Badge>
-                    ))}
+                  <p className="text-gray-300 mb-6">{exp.description}</p>
+                  
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div>
+                      <h4 className="font-semibold text-neon-pink mb-3">Key Achievements</h4>
+                      <ul className="space-y-2">
+                        {exp.achievements.map((achievement, achievementIndex) => (
+                          <li key={achievementIndex} className="text-gray-300 text-sm flex items-start">
+                            <Star className="w-4 h-4 mr-2 text-neon-yellow mt-0.5 flex-shrink-0" />
+                            {achievement}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    
+                    <div>
+                      <h4 className="font-semibold text-neon-blue mb-3">Technologies Used</h4>
+                      <div className="flex flex-wrap gap-2">
+                        {exp.skills.map((skill, skillIndex) => (
+                          <Badge key={skillIndex} variant="secondary" className="bg-gray-800 text-white">
+                            {skill}
+                          </Badge>
+                        ))}
+                      </div>
+                    </div>
                   </div>
                 </CardContent>
               </Card>
