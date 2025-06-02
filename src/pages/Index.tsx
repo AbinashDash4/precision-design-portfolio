@@ -68,10 +68,10 @@ const Index = () => {
           );
         }, 2000);
       }
-    }, 100); // Typing speed
+    }, 100);
 
     return () => clearInterval(typingTimer);
-  }, [currentProfessionIndex, professions]);
+  }, [currentProfessionIndex]);
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -247,13 +247,13 @@ const Index = () => {
             Abinash Dash
           </h1>
           
-          {/* Updated profession display with typing animation */}
-          <div className="mb-8 h-20 flex items-center justify-center">
-            <div className="text-xl md:text-2xl">
+          {/* Simple profession display with typing animation */}
+          <div className="mb-8 h-16 flex items-center justify-center">
+            <div className="text-xl md:text-2xl text-center">
               <span className="text-gray-300">Hi I'm Abinash, I am a </span>
-              <span className="gradient-text font-semibold">
+              <span className="gradient-text font-semibold text-neon-blue">
                 {currentProfessionText}
-                {isTyping && <span className="animate-pulse text-neon-blue">|</span>}
+                {isTyping && <span className="animate-pulse">|</span>}
               </span>
             </div>
           </div>
