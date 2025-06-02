@@ -10,6 +10,8 @@ const Index = () => {
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [typewriterText, setTypewriterText] = useState('');
   const [currentProfessionIndex, setCurrentProfessionIndex] = useState(0);
+  const [currentProfessionText, setCurrentProfessionText] = useState('');
+  const [isTyping, setIsTyping] = useState(true);
 
   const fullText = "Designing with Vision. Developing with Precision. Delivering with Impact.";
 
@@ -46,14 +48,30 @@ const Index = () => {
   }, []);
 
   useEffect(() => {
-    const professionTimer = setInterval(() => {
-      setCurrentProfessionIndex((prevIndex) => 
-        (prevIndex + 1) % professions.length
-      );
-    }, 2000); // Change profession every 2 seconds
+    const currentProfession = professions[currentProfessionIndex];
+    let charIndex = 0;
+    setIsTyping(true);
+    setCurrentProfessionText('');
 
-    return () => clearInterval(professionTimer);
-  }, [professions.length]);
+    const typingTimer = setInterval(() => {
+      if (charIndex <= currentProfession.length) {
+        setCurrentProfessionText(currentProfession.slice(0, charIndex));
+        charIndex++;
+      } else {
+        setIsTyping(false);
+        clearInterval(typingTimer);
+        
+        // Wait before starting to type the next profession
+        setTimeout(() => {
+          setCurrentProfessionIndex((prevIndex) => 
+            (prevIndex + 1) % professions.length
+          );
+        }, 2000);
+      }
+    }, 100); // Typing speed
+
+    return () => clearInterval(typingTimer);
+  }, [currentProfessionIndex, professions]);
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -229,32 +247,14 @@ const Index = () => {
             Abinash Dash
           </h1>
           
-          {/* Updated profession display with cycling animation */}
+          {/* Updated profession display with typing animation */}
           <div className="mb-8 h-20 flex items-center justify-center">
-            <div className="relative overflow-hidden">
-              <div 
-                className="transition-transform duration-500 ease-in-out"
-                style={{ 
-                  transform: `translateY(-${currentProfessionIndex * 100}%)`,
-                  height: `${professions.length * 100}%`
-                }}
-              >
-                {professions.map((profession, index) => (
-                  <div 
-                    key={index}
-                    className="h-20 flex items-center justify-center"
-                    style={{ height: `${100 / professions.length}%` }}
-                  >
-                    <Badge 
-                      variant="outline" 
-                      className="border-neon-blue/50 text-neon-blue bg-neon-blue/5 hover:bg-neon-blue/10 transition-all duration-300 text-lg px-6 py-2"
-                    >
-                      <Code className="w-5 h-5 mr-3" />
-                      {profession}
-                    </Badge>
-                  </div>
-                ))}
-              </div>
+            <div className="text-xl md:text-2xl">
+              <span className="text-gray-300">Hi I'm Abinash, I am a </span>
+              <span className="gradient-text font-semibold">
+                {currentProfessionText}
+                {isTyping && <span className="animate-pulse text-neon-blue">|</span>}
+              </span>
             </div>
           </div>
 
