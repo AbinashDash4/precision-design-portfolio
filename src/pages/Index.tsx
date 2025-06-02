@@ -652,7 +652,7 @@ const Index = () => {
       <footer className="py-8 bg-black border-t border-neon-blue/20">
         <div className="container mx-auto px-4 text-center">
           <p className="text-gray-400 mb-2">
-            © 2024 Abinash Dash. Built with React & Tailwind CSS.
+            © 2025 Abinash Dash. Built with React & Tailwind CSS.
           </p>
           <p className="gradient-text text-sm font-medium">
             Designing with Vision. Developing with Precision. Delivering with Impact.
