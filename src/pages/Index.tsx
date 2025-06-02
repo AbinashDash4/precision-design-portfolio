@@ -1,9 +1,10 @@
+
 import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
-import { ArrowUp, Mail, Phone, MapPin, Download, ExternalLink, Github, Linkedin, Code, Palette, Briefcase, GraduationCap, Award, Calendar, Star, Settings, Home, User, FolderOpen, Zap, BookOpen, Trophy, MessageCircle } from "lucide-react";
+import { ArrowUp, Mail, Phone, MapPin, Download, ExternalLink, Github, Linkedin, Code, Palette, Briefcase, GraduationCap, Award, Calendar, Star, Settings, Home, User, FolderOpen, Zap, BookOpen, Trophy, MessageCircle, Send, Instagram, X } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Index = () => {
@@ -77,7 +78,6 @@ const Index = () => {
       title: "Contacts Management System",
       description: "A comprehensive contact management application with CRUD operations, search functionality, and user-friendly interface.",
       tech: ["Java", "MySQL", "Swing"],
-      demo: "#",
       github: "#",
       features: ["CRUD Operations", "Search & Filter", "Data Export"]
     },
@@ -85,7 +85,6 @@ const Index = () => {
       title: "Face Detection System",
       description: "AI-powered face detection system using computer vision and machine learning algorithms with real-time processing.",
       tech: ["Python", "OpenCV", "TensorFlow"],
-      demo: "#",
       github: "#",
       features: ["Real-time Detection", "Multi-face Recognition", "Performance Analytics"]
     },
@@ -93,7 +92,6 @@ const Index = () => {
       title: "Age & Gender Detection",
       description: "Deep learning model for predicting age and gender from facial images with high accuracy and efficient processing.",
       tech: ["Python", "Deep Learning", "CNN"],
-      demo: "#",
       github: "#",
       features: ["High Accuracy", "Fast Processing", "Batch Analysis"]
     }
@@ -164,11 +162,7 @@ const Index = () => {
           <div className="flex justify-between items-center">
             {/* Logo */}
             <div className="flex items-center">
-              <div className="w-12 h-12 rounded-full bg-gradient-to-r from-neon-blue via-neon-pink to-neon-green p-0.5 animate-pulse-neon">
-                <div className="w-full h-full rounded-full bg-black flex items-center justify-center">
-                  <span className="text-sm font-bold gradient-text">ABINASH</span>
-                </div>
-              </div>
+              <span className="text-2xl font-bold gradient-text">ABINASH</span>
             </div>
 
             {/* Navigation */}
@@ -377,13 +371,9 @@ const Index = () => {
                       ))}
                     </div>
                     <div className="flex gap-3">
-                      <Button size="sm" variant="outline" className="border-neon-blue/50 text-neon-blue hover:bg-neon-blue/10 flex-1">
-                        <ExternalLink className="w-4 h-4 mr-2" />
-                        Demo
-                      </Button>
-                      <Button size="sm" variant="outline" className="border-neon-green/50 text-neon-green hover:bg-neon-green/10 flex-1">
+                      <Button size="sm" variant="outline" className="border-neon-green/50 text-neon-green hover:bg-neon-green/10 w-full">
                         <Github className="w-4 h-4 mr-2" />
-                        Code
+                        View Code
                       </Button>
                     </div>
                   </div>
@@ -468,6 +458,11 @@ const Index = () => {
                   <CardDescription className="text-gray-400">
                     {cert.issuer} • {cert.date}
                   </CardDescription>
+                  <div className="mt-4">
+                    <Badge variant="outline" className="border-neon-yellow/50 text-neon-yellow">
+                      {cert.type === 'certification' ? 'Certificate' : 'Achievement'}
+                    </Badge>
+                  </div>
                 </CardHeader>
               </Card>
             ))}
@@ -499,56 +494,123 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 gradient-text">Get In Touch</h2>
           
-          <div className="max-w-4xl mx-auto">
-            <Card className="bg-black/90 backdrop-blur-xl border border-gray-800 hover:border-neon-blue/50 transition-all duration-500">
-              <CardContent className="p-8">
-                <div className="grid md:grid-cols-2 gap-8">
-                  <div className="space-y-6">
-                    <div className="flex items-center p-4 rounded-lg bg-neon-blue/5 border border-neon-blue/20 hover:bg-neon-blue/10 transition-colors duration-300">
-                      <Phone className="w-6 h-6 mr-4 text-neon-blue" />
-                      <div>
-                        <p className="font-semibold text-white">Phone</p>
-                        <p className="text-gray-400">+91 7978825471</p>
-                      </div>
-                    </div>
-                    
-                    <div className="flex items-center p-4 rounded-lg bg-neon-pink/5 border border-neon-pink/20 hover:bg-neon-pink/10 transition-colors duration-300">
-                      <Mail className="w-6 h-6 mr-4 text-neon-pink" />
-                      <div>
-                        <p className="font-semibold text-white">Email</p>
-                        <p className="text-gray-400">abinashdash2022@gift.edu.in</p>
-                        <p className="text-gray-400">abinashdash019@gmail.com</p>
-                      </div>
-                    </div>
-                    
-                    <div className="flex items-center p-4 rounded-lg bg-neon-green/5 border border-neon-green/20 hover:bg-neon-green/10 transition-colors duration-300">
-                      <MapPin className="w-6 h-6 mr-4 text-neon-green" />
-                      <div>
-                        <p className="font-semibold text-white">Location</p>
-                        <p className="text-gray-400">Binjhagiri, Khordha, Odisha</p>
-                      </div>
+          <div className="max-w-6xl mx-auto">
+            <div className="grid lg:grid-cols-2 gap-12">
+              {/* Contact Information */}
+              <Card className="bg-black/90 backdrop-blur-xl border border-gray-800 hover:border-neon-blue/50 transition-all duration-500">
+                <CardHeader>
+                  <CardTitle className="text-neon-blue flex items-center">
+                    <MessageCircle className="w-6 h-6 mr-3" />
+                    Contact Information
+                  </CardTitle>
+                  <CardDescription className="text-gray-400">
+                    Feel free to reach out through any of these channels
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="space-y-6">
+                  <div className="flex items-center p-4 rounded-lg bg-neon-blue/5 border border-neon-blue/20 hover:bg-neon-blue/10 transition-colors duration-300">
+                    <Phone className="w-6 h-6 mr-4 text-neon-blue" />
+                    <div>
+                      <p className="font-semibold text-white">Phone</p>
+                      <p className="text-gray-400">+91 7978825471</p>
                     </div>
                   </div>
                   
-                  <div className="space-y-6">
-                    <div className="flex items-center p-4 rounded-lg bg-neon-blue/5 border border-neon-blue/20 hover:bg-neon-blue/10 transition-colors duration-300">
-                      <Linkedin className="w-6 h-6 mr-4 text-neon-blue" />
-                      <div>
-                        <p className="font-semibold text-white">LinkedIn</p>
-                        <a href="https://linkedin.com/in/abinashdashh" className="text-neon-blue hover:underline">
-                          linkedin.com/in/abinashdashh
-                        </a>
-                      </div>
+                  <div className="flex items-center p-4 rounded-lg bg-neon-pink/5 border border-neon-pink/20 hover:bg-neon-pink/10 transition-colors duration-300">
+                    <Mail className="w-6 h-6 mr-4 text-neon-pink" />
+                    <div>
+                      <p className="font-semibold text-white">Email</p>
+                      <p className="text-gray-400">abinashdash2022@gift.edu.in</p>
+                      <p className="text-gray-400">abinashdash019@gmail.com</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-center p-4 rounded-lg bg-neon-green/5 border border-neon-green/20 hover:bg-neon-green/10 transition-colors duration-300">
+                    <MapPin className="w-6 h-6 mr-4 text-neon-green" />
+                    <div>
+                      <p className="font-semibold text-white">Location</p>
+                      <p className="text-gray-400">Binjhagiri, Khordha, Odisha</p>
+                    </div>
+                  </div>
+                  
+                  {/* Social Media */}
+                  <div className="pt-6">
+                    <h4 className="font-semibold text-white mb-4">Follow Me</h4>
+                    <div className="flex gap-4">
+                      <Button size="sm" variant="outline" className="border-neon-blue/50 text-neon-blue hover:bg-neon-blue/10">
+                        <Linkedin className="w-4 h-4 mr-2" />
+                        LinkedIn
+                      </Button>
+                      <Button size="sm" variant="outline" className="border-neon-pink/50 text-neon-pink hover:bg-neon-pink/10">
+                        <Instagram className="w-4 h-4 mr-2" />
+                        Instagram
+                      </Button>
+                      <Button size="sm" variant="outline" className="border-neon-green/50 text-neon-green hover:bg-neon-green/10">
+                        <X className="w-4 h-4 mr-2" />
+                        Twitter
+                      </Button>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+              
+              {/* Send Message Form */}
+              <Card className="bg-black/90 backdrop-blur-xl border border-gray-800 hover:border-neon-pink/50 transition-all duration-500">
+                <CardHeader>
+                  <CardTitle className="text-neon-pink flex items-center">
+                    <Send className="w-6 h-6 mr-3" />
+                    Send a Message
+                  </CardTitle>
+                  <CardDescription className="text-gray-400">
+                    Let's discuss your project or just say hello!
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <form className="space-y-6">
+                    <div>
+                      <label className="text-sm font-medium text-gray-300 block mb-2">Your Name</label>
+                      <input
+                        type="text"
+                        className="w-full px-4 py-3 bg-gray-900/80 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:border-neon-blue focus:outline-none transition-colors duration-300"
+                        placeholder="Enter your name"
+                      />
+                    </div>
+                    
+                    <div>
+                      <label className="text-sm font-medium text-gray-300 block mb-2">Email Address</label>
+                      <input
+                        type="email"
+                        className="w-full px-4 py-3 bg-gray-900/80 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:border-neon-blue focus:outline-none transition-colors duration-300"
+                        placeholder="Enter your email"
+                      />
+                    </div>
+                    
+                    <div>
+                      <label className="text-sm font-medium text-gray-300 block mb-2">Subject</label>
+                      <input
+                        type="text"
+                        className="w-full px-4 py-3 bg-gray-900/80 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:border-neon-blue focus:outline-none transition-colors duration-300"
+                        placeholder="What's this about?"
+                      />
+                    </div>
+                    
+                    <div>
+                      <label className="text-sm font-medium text-gray-300 block mb-2">Message</label>
+                      <textarea
+                        rows={5}
+                        className="w-full px-4 py-3 bg-gray-900/80 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:border-neon-blue focus:outline-none transition-colors duration-300 resize-none"
+                        placeholder="Tell me about your project or idea..."
+                      />
                     </div>
                     
                     <Button className="w-full bg-gradient-to-r from-neon-blue to-neon-pink hover:from-neon-pink hover:to-neon-blue text-black font-semibold py-4 animate-glow">
-                      <Mail className="w-5 h-5 mr-2" />
+                      <Send className="w-5 h-5 mr-2" />
                       Send Message
                     </Button>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+                  </form>
+                </CardContent>
+              </Card>
+            </div>
           </div>
         </div>
       </section>

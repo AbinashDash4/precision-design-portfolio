@@ -1,5 +1,5 @@
-
 import React, { useState } from 'react';
+import AdminLogin from '../components/AdminLogin';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -11,6 +11,7 @@ import { ArrowLeft, Plus, Edit, Trash2, Save, X, User, Briefcase, Code, Award, M
 import { Link } from "react-router-dom";
 
 const Admin = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [activeSection, setActiveSection] = useState('overview');
   const [editMode, setEditMode] = useState(false);
 
@@ -645,6 +646,18 @@ const Admin = () => {
     }
   };
 
+  const handleLogin = (success: boolean) => {
+    setIsLoggedIn(success);
+  };
+
+  const handleLogout = () => {
+    setIsLoggedIn(false);
+  };
+
+  if (!isLoggedIn) {
+    return <AdminLogin onLogin={handleLogin} />;
+  }
+
   return (
     <div className="min-h-screen bg-black text-white">
       {/* Header */}
@@ -668,6 +681,13 @@ const Admin = () => {
               <Button className="bg-gradient-to-r from-neon-green to-neon-blue hover:from-neon-blue hover:to-neon-green text-black font-semibold">
                 <Save className="w-4 h-4 mr-2" />
                 Save Changes
+              </Button>
+              <Button 
+                onClick={handleLogout}
+                variant="outline" 
+                className="border-neon-pink/50 text-neon-pink hover:bg-neon-pink/10"
+              >
+                Logout
               </Button>
             </div>
           </div>
