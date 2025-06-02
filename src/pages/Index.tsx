@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -10,8 +9,18 @@ import { Link } from "react-router-dom";
 const Index = () => {
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [typewriterText, setTypewriterText] = useState('');
+  const [currentProfessionIndex, setCurrentProfessionIndex] = useState(0);
 
   const fullText = "Designing with Vision. Developing with Precision. Delivering with Impact.";
+
+  const professions = [
+    "UI/UX Designer",
+    "Frontend Developer", 
+    "Software Developer",
+    "Full Stack Developer",
+    "AI/ML Engineer",
+    "Creative Technologist"
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -35,6 +44,16 @@ const Index = () => {
 
     return () => clearInterval(timer);
   }, []);
+
+  useEffect(() => {
+    const professionTimer = setInterval(() => {
+      setCurrentProfessionIndex((prevIndex) => 
+        (prevIndex + 1) % professions.length
+      );
+    }, 2000); // Change profession every 2 seconds
+
+    return () => clearInterval(professionTimer);
+  }, [professions.length]);
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -210,19 +229,33 @@ const Index = () => {
             Abinash Dash
           </h1>
           
-          <div className="flex flex-wrap justify-center gap-4 mb-8">
-            <Badge variant="outline" className="border-neon-blue/50 text-neon-blue bg-neon-blue/5 hover:bg-neon-blue/10 transition-all duration-300">
-              <Palette className="w-4 h-4 mr-2" />
-              UI/UX Designer
-            </Badge>
-            <Badge variant="outline" className="border-neon-pink/50 text-neon-pink bg-neon-pink/5 hover:bg-neon-pink/10 transition-all duration-300">
-              <Code className="w-4 h-4 mr-2" />
-              Frontend Developer
-            </Badge>
-            <Badge variant="outline" className="border-neon-green/50 text-neon-green bg-neon-green/5 hover:bg-neon-green/10 transition-all duration-300">
-              <Briefcase className="w-4 h-4 mr-2" />
-              Software Developer
-            </Badge>
+          {/* Updated profession display with cycling animation */}
+          <div className="mb-8 h-20 flex items-center justify-center">
+            <div className="relative overflow-hidden">
+              <div 
+                className="transition-transform duration-500 ease-in-out"
+                style={{ 
+                  transform: `translateY(-${currentProfessionIndex * 100}%)`,
+                  height: `${professions.length * 100}%`
+                }}
+              >
+                {professions.map((profession, index) => (
+                  <div 
+                    key={index}
+                    className="h-20 flex items-center justify-center"
+                    style={{ height: `${100 / professions.length}%` }}
+                  >
+                    <Badge 
+                      variant="outline" 
+                      className="border-neon-blue/50 text-neon-blue bg-neon-blue/5 hover:bg-neon-blue/10 transition-all duration-300 text-lg px-6 py-2"
+                    >
+                      <Code className="w-5 h-5 mr-3" />
+                      {profession}
+                    </Badge>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
 
           <p className="text-xl md:text-3xl mb-12 h-20 flex items-center justify-center">
