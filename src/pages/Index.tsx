@@ -294,24 +294,27 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black text-white overflow-x-hidden">
-      {/* Animated Background Elements */}
-      <div className="fixed inset-0 opacity-20 pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-neon-blue/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-neon-pink/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
-        <div className="absolute top-3/4 left-1/2 w-96 h-96 bg-neon-green/10 rounded-full blur-3xl animate-pulse delay-2000"></div>
+      {/* Enhanced Animated Background Elements */}
+      <div className="fixed inset-0 opacity-30 pointer-events-none">
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-neon-blue/20 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-neon-pink/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        <div className="absolute top-3/4 left-1/2 w-96 h-96 bg-neon-green/20 rounded-full blur-3xl animate-pulse delay-2000"></div>
+        <div className="absolute top-1/2 right-1/3 w-64 h-64 bg-neon-yellow/15 rounded-full blur-2xl animate-pulse delay-3000"></div>
+        <div className="absolute bottom-1/3 left-1/3 w-80 h-80 bg-neon-blue/15 rounded-full blur-2xl animate-pulse delay-4000"></div>
       </div>
 
-      {/* Header */}
+      {/* Enhanced Header */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-black/95 backdrop-blur-2xl border-b border-gradient-to-r from-neon-blue/30 via-neon-pink/30 to-neon-green/30">
         <div className="container mx-auto px-6 py-4">
           <div className="flex justify-between items-center">
-            {/* Logo */}
+            {/* Enhanced Logo */}
             <div className="flex items-center">
-              <div className="relative">
+              <div className="relative group">
                 <span className="text-3xl font-bold bg-gradient-to-r from-neon-blue via-neon-pink to-neon-green bg-clip-text text-transparent animate-pulse">
                   ABINASH
                 </span>
                 <div className="absolute -top-1 -right-1 w-3 h-3 bg-neon-green rounded-full animate-ping"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-neon-blue/20 via-neon-pink/20 to-neon-green/20 blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
             </div>
 
@@ -323,73 +326,115 @@ const Index = () => {
                   variant="ghost"
                   size="sm"
                   onClick={() => scrollToSection(item.id)}
-                  className="text-gray-300 hover:text-white hover:bg-gradient-to-r hover:from-neon-blue/20 hover:to-neon-pink/20 transition-all duration-300 rounded-full px-4 py-2 group"
+                  className="text-gray-300 hover:text-white hover:bg-gradient-to-r hover:from-neon-blue/20 hover:to-neon-pink/20 transition-all duration-300 rounded-full px-4 py-2 group relative overflow-hidden"
                 >
-                  <item.icon className="w-4 h-4 mr-2 group-hover:scale-110 transition-transform duration-300" />
-                  {item.label}
+                  <div className="absolute inset-0 bg-gradient-to-r from-neon-blue/10 to-neon-pink/10 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+                  <item.icon className="w-4 h-4 mr-2 group-hover:scale-110 transition-transform duration-300 relative z-10" />
+                  <span className="relative z-10">{item.label}</span>
                 </Button>
               ))}
             </nav>
 
             {/* Enhanced Download CV Button */}
-            <Button className="bg-gradient-to-r from-neon-blue via-neon-pink to-neon-green hover:from-neon-green hover:via-neon-blue hover:to-neon-pink text-black font-bold shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300 rounded-full px-6 py-2">
-              <Download className="w-4 h-4 mr-2" />
-              Download CV
+            <Button className="bg-gradient-to-r from-neon-blue via-neon-pink to-neon-green hover:from-neon-green hover:via-neon-blue hover:to-neon-pink text-black font-bold shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300 rounded-full px-6 py-2 relative overflow-hidden group">
+              <div className="absolute inset-0 bg-gradient-to-r from-neon-green via-neon-yellow to-neon-blue opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <Download className="w-4 h-4 mr-2 relative z-10" />
+              <span className="relative z-10">Download CV</span>
             </Button>
           </div>
         </div>
       </header>
 
-      {/* Enhanced Hero Section */}
-      <section id="hero" className="min-h-screen flex items-center justify-center relative pt-20">
-        <div className="absolute inset-0 bg-gradient-to-br from-neon-blue/10 via-transparent to-neon-pink/10"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(0,240,255,0.15),transparent_40%)] animate-pulse"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_70%,rgba(255,0,255,0.15),transparent_40%)] animate-pulse delay-1000"></div>
+      {/* Dramatically Enhanced Hero Section */}
+      <section id="hero" className="min-h-screen flex items-center justify-center relative pt-20 overflow-hidden">
+        {/* Multiple layered background effects */}
+        <div className="absolute inset-0 bg-gradient-to-br from-neon-blue/15 via-transparent to-neon-pink/15"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(0,240,255,0.2),transparent_40%)] animate-pulse"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_70%,rgba(255,0,255,0.2),transparent_40%)] animate-pulse delay-1000"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_20%,rgba(57,255,20,0.15),transparent_50%)] animate-pulse delay-2000"></div>
+        
+        {/* Floating geometric shapes */}
+        <div className="absolute top-20 left-10 w-4 h-4 bg-neon-yellow rotate-45 animate-bounce delay-1000"></div>
+        <div className="absolute top-32 right-20 w-6 h-6 bg-neon-pink rounded-full animate-pulse delay-2000"></div>
+        <div className="absolute bottom-40 left-20 w-3 h-12 bg-neon-blue animate-pulse delay-3000"></div>
+        <div className="absolute bottom-20 right-40 w-8 h-8 bg-neon-green rotate-12 animate-bounce delay-4000"></div>
         
         <div className="container mx-auto px-6 text-center relative z-10 max-w-6xl">
-          <div className="animate-float mb-12">
-            <div className="w-56 h-56 mx-auto mb-8 rounded-full bg-gradient-to-r from-neon-blue via-neon-pink to-neon-green p-3 animate-spin-slow shadow-2xl">
-              <div className="w-full h-full rounded-full bg-black flex items-center justify-center shadow-inner">
-                <span className="text-5xl font-bold bg-gradient-to-r from-neon-blue to-neon-pink bg-clip-text text-transparent">AD</span>
+          {/* Enhanced Profile Image */}
+          <div className="animate-float mb-16">
+            <div className="w-64 h-64 mx-auto mb-12 rounded-full bg-gradient-to-r from-neon-blue via-neon-pink to-neon-green p-4 animate-spin-slow shadow-2xl relative group">
+              <div className="w-full h-full rounded-full bg-black flex items-center justify-center shadow-inner relative overflow-hidden">
+                <span className="text-6xl font-bold bg-gradient-to-r from-neon-blue to-neon-pink bg-clip-text text-transparent">AD</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-neon-blue/20 to-neon-pink/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              </div>
+              {/* Orbiting elements */}
+              <div className="absolute -top-2 left-1/2 w-4 h-4 bg-neon-yellow rounded-full animate-ping"></div>
+              <div className="absolute top-1/2 -right-2 w-3 h-3 bg-neon-green rounded-full animate-pulse delay-1000"></div>
+              <div className="absolute -bottom-2 left-1/2 w-4 h-4 bg-neon-blue rounded-full animate-ping delay-2000"></div>
+              <div className="absolute top-1/2 -left-2 w-3 h-3 bg-neon-pink rounded-full animate-pulse delay-3000"></div>
+            </div>
+          </div>
+          
+          {/* Enhanced Name with better typography */}
+          <div className="mb-12">
+            <h1 className="text-8xl md:text-9xl lg:text-[10rem] font-bold mb-6 bg-gradient-to-r from-neon-blue via-neon-pink to-neon-green bg-clip-text text-transparent animate-pulse leading-none tracking-tight">
+              Abinash Dash
+            </h1>
+            <div className="w-32 h-1 bg-gradient-to-r from-neon-blue to-neon-pink mx-auto rounded-full"></div>
+          </div>
+          
+          {/* Enhanced Profession display with better animations */}
+          <div className="mb-16 h-32 flex items-center justify-center">
+            <div className="text-center">
+              <p className="text-2xl md:text-3xl text-gray-300 mb-4 font-light">
+                Hi, I'm Abinash, I am a
+              </p>
+              <div className="h-20 flex items-center justify-center">
+                <span className="bg-gradient-to-r from-neon-blue via-neon-pink to-neon-green bg-clip-text text-transparent font-bold text-4xl md:text-6xl lg:text-7xl tracking-wide">
+                  {currentProfessionText}
+                  {isTyping && <span className="animate-pulse text-neon-green text-5xl">|</span>}
+                </span>
               </div>
             </div>
           </div>
-          
-          <h1 className="text-7xl md:text-9xl font-bold mb-8 bg-gradient-to-r from-neon-blue via-neon-pink to-neon-green bg-clip-text text-transparent animate-pulse leading-tight">
-            Abinash Dash
-          </h1>
-          
-          {/* Enhanced Profession display */}
-          <div className="mb-12 h-24 flex items-center justify-center">
-            <div className="text-2xl md:text-4xl text-center">
-              <span className="text-gray-300">Hi I'm Abinash, I am a </span>
-              <span className="bg-gradient-to-r from-neon-blue to-neon-pink bg-clip-text text-transparent font-bold text-4xl md:text-5xl">
-                {currentProfessionText}
-                {isTyping && <span className="animate-pulse text-neon-green">|</span>}
-              </span>
+
+          {/* Enhanced tagline with better styling */}
+          <div className="mb-20">
+            <div className="max-w-4xl mx-auto">
+              <p className="text-2xl md:text-4xl lg:text-5xl mb-8 leading-relaxed font-medium">
+                <span className="bg-gradient-to-r from-neon-green via-neon-blue to-neon-pink bg-clip-text text-transparent">
+                  {typewriterText}
+                  <span className="animate-pulse text-neon-yellow">|</span>
+                </span>
+              </p>
+              <div className="w-24 h-1 bg-gradient-to-r from-neon-green to-neon-yellow mx-auto rounded-full"></div>
             </div>
           </div>
 
-          <p className="text-3xl md:text-5xl mb-16 h-32 flex items-center justify-center">
-            <span className="bg-gradient-to-r from-neon-green via-neon-blue to-neon-pink bg-clip-text text-transparent font-medium leading-relaxed">
-              {typewriterText}
-              <span className="animate-pulse text-neon-yellow">|</span>
-            </span>
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-8 justify-center">
-            <Button className="bg-gradient-to-r from-neon-blue via-neon-pink to-neon-green hover:from-neon-green hover:via-neon-yellow hover:to-neon-blue text-black font-bold px-12 py-6 text-xl rounded-full shadow-2xl hover:shadow-neon transform hover:scale-110 transition-all duration-500">
-              <Download className="w-7 h-7 mr-3" />
-              Download CV
+          {/* Enhanced CTA buttons */}
+          <div className="flex flex-col sm:flex-row gap-8 justify-center items-center">
+            <Button className="bg-gradient-to-r from-neon-blue via-neon-pink to-neon-green hover:from-neon-green hover:via-neon-yellow hover:to-neon-blue text-black font-bold px-16 py-8 text-2xl rounded-full shadow-2xl hover:shadow-neon transform hover:scale-110 transition-all duration-500 group relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-r from-neon-green via-neon-yellow to-neon-blue opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <Download className="w-8 h-8 mr-4 relative z-10" />
+              <span className="relative z-10">Download CV</span>
             </Button>
             <Button 
               variant="outline" 
-              className="border-3 border-neon-green text-neon-green hover:bg-neon-green hover:text-black px-12 py-6 text-xl rounded-full shadow-2xl hover:shadow-neon transform hover:scale-110 transition-all duration-500"
+              className="border-4 border-neon-green text-neon-green hover:bg-neon-green hover:text-black px-16 py-8 text-2xl rounded-full shadow-2xl hover:shadow-neon transform hover:scale-110 transition-all duration-500 group relative overflow-hidden"
               onClick={() => scrollToSection('contact')}
             >
-              <Mail className="w-7 h-7 mr-3" />
-              Contact Me
+              <div className="absolute inset-0 bg-neon-green opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <Mail className="w-8 h-8 mr-4 relative z-10" />
+              <span className="relative z-10">Contact Me</span>
             </Button>
+          </div>
+
+          {/* Enhanced scroll indicator */}
+          <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <div className="w-6 h-10 border-2 border-neon-blue rounded-full flex justify-center">
+              <div className="w-1 h-3 bg-neon-blue rounded-full mt-2 animate-pulse"></div>
+            </div>
+            <p className="text-neon-blue text-sm mt-2 font-medium">Scroll Down</p>
           </div>
         </div>
       </section>
