@@ -1,10 +1,9 @@
-
 import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
-import { ArrowUp, Mail, Phone, MapPin, Download, ExternalLink, Github, Linkedin, Code, Palette, Briefcase, GraduationCap, Award, Calendar, Star, Home, User, FolderOpen, Zap, BookOpen, Trophy, MessageCircle, Send, Instagram, X, Globe, Eye } from "lucide-react";
+import { ArrowUp, Mail, Phone, MapPin, Download, ExternalLink, Github, Linkedin, Code, Palette, Briefcase, GraduationCap, Award, Calendar, Star, Home, User, FolderOpen, Zap, BookOpen, Trophy, MessageCircle, Send, Instagram, X, Globe, Eye, CheckCircle } from "lucide-react";
 
 const Index = () => {
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -116,27 +115,27 @@ const Index = () => {
       description: "A comprehensive contact management application with CRUD operations, advanced search functionality, data export capabilities, and intuitive user interface designed for efficient contact organization.",
       tech: ["Java", "MySQL", "Swing", "JDBC"],
       github: "https://github.com/abinashdash",
-      liveDemo: "#",
       features: ["CRUD Operations", "Advanced Search & Filter", "Data Export to CSV/Excel", "Contact Categories", "Backup & Restore"],
-      highlights: ["Handles 10,000+ contacts efficiently", "Real-time search with instant results", "User-friendly interface with modern design"]
+      highlights: ["Handles 10,000+ contacts efficiently", "Real-time search with instant results", "User-friendly interface with modern design"],
+      status: "Production Ready"
     },
     {
       title: "Face Detection System",
       description: "Advanced AI-powered face detection system using computer vision and machine learning algorithms with real-time processing capabilities and high accuracy recognition.",
       tech: ["Python", "OpenCV", "TensorFlow", "NumPy", "Matplotlib"],
       github: "https://github.com/abinashdash",
-      liveDemo: "#",
       features: ["Real-time Detection", "Multi-face Recognition", "Performance Analytics", "Age & Gender Detection", "Emotion Recognition"],
-      highlights: ["95%+ accuracy rate", "Real-time processing at 30 FPS", "Works with multiple camera inputs"]
+      highlights: ["95%+ accuracy rate", "Real-time processing at 30 FPS", "Works with multiple camera inputs"],
+      status: "Active Development"
     },
     {
       title: "Age & Gender Detection",
       description: "Sophisticated deep learning model for predicting age and gender from facial images with high accuracy, efficient processing, and comprehensive analytics dashboard.",
       tech: ["Python", "Deep Learning", "CNN", "Keras", "OpenCV"],
       github: "https://github.com/abinashdash",
-      liveDemo: "#",
       features: ["High Accuracy Prediction", "Fast Processing", "Batch Analysis", "Analytics Dashboard", "Model Training Interface"],
-      highlights: ["92% age accuracy within 5 years", "98% gender classification accuracy", "Processes 100+ images per minute"]
+      highlights: ["92% age accuracy within 5 years", "98% gender classification accuracy", "Processes 100+ images per minute"],
+      status: "Research Phase"
     }
   ];
 
@@ -224,34 +223,46 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-black text-white overflow-x-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black text-white overflow-x-hidden">
+      {/* Animated Background Elements */}
+      <div className="fixed inset-0 opacity-20 pointer-events-none">
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-neon-blue/10 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-neon-pink/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        <div className="absolute top-3/4 left-1/2 w-96 h-96 bg-neon-green/10 rounded-full blur-3xl animate-pulse delay-2000"></div>
+      </div>
+
       {/* Header */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-xl border-b border-neon-blue/20">
-        <div className="container mx-auto px-4 py-3">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-black/95 backdrop-blur-2xl border-b border-gradient-to-r from-neon-blue/30 via-neon-pink/30 to-neon-green/30">
+        <div className="container mx-auto px-6 py-4">
           <div className="flex justify-between items-center">
             {/* Logo */}
             <div className="flex items-center">
-              <span className="text-2xl font-bold gradient-text">ABINASH</span>
+              <div className="relative">
+                <span className="text-3xl font-bold bg-gradient-to-r from-neon-blue via-neon-pink to-neon-green bg-clip-text text-transparent animate-pulse">
+                  ABINASH
+                </span>
+                <div className="absolute -top-1 -right-1 w-3 h-3 bg-neon-green rounded-full animate-ping"></div>
+              </div>
             </div>
 
-            {/* Navigation */}
-            <nav className="hidden md:flex items-center space-x-1">
+            {/* Enhanced Navigation */}
+            <nav className="hidden md:flex items-center space-x-2">
               {navigationItems.map((item) => (
                 <Button
                   key={item.id}
                   variant="ghost"
                   size="sm"
                   onClick={() => scrollToSection(item.id)}
-                  className="text-gray-300 hover:text-neon-blue hover:bg-neon-blue/10 transition-all duration-300"
+                  className="text-gray-300 hover:text-white hover:bg-gradient-to-r hover:from-neon-blue/20 hover:to-neon-pink/20 transition-all duration-300 rounded-full px-4 py-2 group"
                 >
-                  <item.icon className="w-4 h-4 mr-2" />
+                  <item.icon className="w-4 h-4 mr-2 group-hover:scale-110 transition-transform duration-300" />
                   {item.label}
                 </Button>
               ))}
             </nav>
 
-            {/* Download CV Button */}
-            <Button className="bg-gradient-to-r from-neon-blue to-neon-pink hover:from-neon-pink hover:to-neon-blue text-black font-semibold">
+            {/* Enhanced Download CV Button */}
+            <Button className="bg-gradient-to-r from-neon-blue via-neon-pink to-neon-green hover:from-neon-green hover:via-neon-blue hover:to-neon-pink text-black font-bold shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300 rounded-full px-6 py-2">
               <Download className="w-4 h-4 mr-2" />
               Download CV
             </Button>
@@ -259,117 +270,130 @@ const Index = () => {
         </div>
       </header>
 
-      {/* Hero Section */}
+      {/* Enhanced Hero Section */}
       <section id="hero" className="min-h-screen flex items-center justify-center relative pt-20">
-        <div className="absolute inset-0 bg-gradient-to-br from-neon-blue/5 via-transparent to-neon-pink/5"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(0,240,255,0.1),transparent_50%)]"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-neon-blue/10 via-transparent to-neon-pink/10"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(0,240,255,0.15),transparent_40%)] animate-pulse"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_70%,rgba(255,0,255,0.15),transparent_40%)] animate-pulse delay-1000"></div>
         
-        <div className="container mx-auto px-4 text-center relative z-10">
-          <div className="animate-float mb-8">
-            <div className="w-40 h-40 mx-auto mb-8 rounded-full bg-gradient-to-r from-neon-blue via-neon-pink to-neon-green p-1 animate-glow">
-              <div className="w-full h-full rounded-full bg-black flex items-center justify-center">
-                <span className="text-3xl font-bold gradient-text">AD</span>
+        <div className="container mx-auto px-6 text-center relative z-10">
+          <div className="animate-float mb-12">
+            <div className="w-48 h-48 mx-auto mb-8 rounded-full bg-gradient-to-r from-neon-blue via-neon-pink to-neon-green p-2 animate-spin-slow shadow-2xl">
+              <div className="w-full h-full rounded-full bg-black flex items-center justify-center shadow-inner">
+                <span className="text-4xl font-bold bg-gradient-to-r from-neon-blue to-neon-pink bg-clip-text text-transparent">AD</span>
               </div>
             </div>
           </div>
           
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 neon-text animate-pulse-neon">
+          <h1 className="text-6xl md:text-8xl font-bold mb-8 bg-gradient-to-r from-neon-blue via-neon-pink to-neon-green bg-clip-text text-transparent animate-pulse">
             Abinash Dash
           </h1>
           
-          {/* Profession display with typing animation */}
-          <div className="mb-8 h-16 flex items-center justify-center">
-            <div className="text-xl md:text-2xl text-center">
+          {/* Enhanced Profession display */}
+          <div className="mb-12 h-20 flex items-center justify-center">
+            <div className="text-2xl md:text-3xl text-center">
               <span className="text-gray-300">Hi I'm Abinash, I am a </span>
-              <span className="gradient-text font-semibold text-neon-blue">
+              <span className="bg-gradient-to-r from-neon-blue to-neon-pink bg-clip-text text-transparent font-bold text-3xl md:text-4xl">
                 {currentProfessionText}
-                {isTyping && <span className="animate-pulse">|</span>}
+                {isTyping && <span className="animate-pulse text-neon-green">|</span>}
               </span>
             </div>
           </div>
 
-          <p className="text-xl md:text-3xl mb-12 h-20 flex items-center justify-center">
-            <span className="gradient-text font-medium">
+          <p className="text-2xl md:text-4xl mb-16 h-24 flex items-center justify-center">
+            <span className="bg-gradient-to-r from-neon-green via-neon-blue to-neon-pink bg-clip-text text-transparent font-medium">
               {typewriterText}
-              <span className="animate-pulse text-neon-blue">|</span>
+              <span className="animate-pulse text-neon-yellow">|</span>
             </span>
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <Button className="bg-gradient-to-r from-neon-blue to-neon-pink hover:from-neon-pink hover:to-neon-blue text-black font-semibold px-8 py-3 animate-glow transition-all duration-500">
-              <Download className="w-5 h-5 mr-2" />
+          <div className="flex flex-col sm:flex-row gap-8 justify-center">
+            <Button className="bg-gradient-to-r from-neon-blue via-neon-pink to-neon-green hover:from-neon-green hover:via-neon-yellow hover:to-neon-blue text-black font-bold px-10 py-4 text-lg rounded-full shadow-2xl hover:shadow-neon transform hover:scale-110 transition-all duration-500">
+              <Download className="w-6 h-6 mr-3" />
               Download CV
             </Button>
             <Button 
               variant="outline" 
-              className="border-neon-green/50 text-neon-green hover:bg-neon-green/10 hover:border-neon-green px-8 py-3 transition-all duration-300"
+              className="border-2 border-neon-green text-neon-green hover:bg-neon-green hover:text-black px-10 py-4 text-lg rounded-full shadow-2xl hover:shadow-neon transform hover:scale-110 transition-all duration-500"
               onClick={() => scrollToSection('contact')}
             >
-              <Mail className="w-5 h-5 mr-2" />
+              <Mail className="w-6 h-6 mr-3" />
               Contact Me
             </Button>
           </div>
         </div>
       </section>
 
-      {/* About Section */}
-      <section id="about" className="py-20 bg-gradient-to-b from-black to-gray-900/50">
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 gradient-text">About Me</h2>
+      {/* Enhanced About Section */}
+      <section id="about" className="py-24 bg-gradient-to-b from-black via-gray-900/80 to-black relative">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(0,240,255,0.05),transparent_70%)]"></div>
+        <div className="container mx-auto px-6 relative z-10">
+          <h2 className="text-5xl md:text-6xl font-bold text-center mb-20 bg-gradient-to-r from-neon-blue via-neon-pink to-neon-green bg-clip-text text-transparent">About Me</h2>
           
-          <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-            <Card className="bg-black/80 backdrop-blur-xl border border-neon-pink/30 hover:border-neon-pink/60 transition-all duration-500 group">
-              <CardHeader>
-                <CardTitle className="text-neon-pink flex items-center group-hover:text-neon-blue transition-colors duration-300">
-                  <Star className="w-6 h-6 mr-3" />
-                  Vision & Goals
+          <div className="grid lg:grid-cols-2 gap-16 max-w-7xl mx-auto">
+            <Card className="bg-black/90 backdrop-blur-2xl border-2 border-neon-pink/30 hover:border-neon-pink/80 transition-all duration-500 group rounded-3xl shadow-2xl hover:shadow-neon transform hover:scale-105">
+              <CardHeader className="pb-6">
+                <CardTitle className="text-neon-pink flex items-center group-hover:text-neon-blue transition-colors duration-300 text-2xl">
+                  <Star className="w-8 h-8 mr-4 animate-pulse" />
+                  Vision & Mission
                 </CardTitle>
               </CardHeader>
-              <CardContent>
-                <p className="text-gray-300 leading-relaxed mb-4 text-lg">
+              <CardContent className="space-y-6">
+                <p className="text-gray-300 leading-relaxed text-lg">
                   I envision a future where technology seamlessly integrates with human creativity to solve complex problems. 
-                  My goal is to bridge the gap between innovative design and robust development, creating digital solutions 
+                  My mission is to bridge the gap between innovative design and robust development, creating digital solutions 
                   that are not only functional but also meaningful and accessible to everyone.
                 </p>
                 <p className="text-gray-300 leading-relaxed text-lg">
                   Through continuous learning in AI, machine learning, and user experience design, I aim to contribute to 
                   projects that make a positive impact on society while pushing the boundaries of what's possible in technology.
                 </p>
+                <div className="flex flex-wrap gap-3 mt-6">
+                  {["Innovation", "Quality", "Impact", "Creativity"].map((value, index) => (
+                    <Badge key={index} variant="outline" className="border-neon-pink/50 text-neon-pink bg-neon-pink/10 px-4 py-2 text-sm">
+                      {value}
+                    </Badge>
+                  ))}
+                </div>
               </CardContent>
             </Card>
 
-            <Card className="bg-black/80 backdrop-blur-xl border border-neon-blue/30 hover:border-neon-blue/60 transition-all duration-500 group">
-              <CardHeader>
-                <CardTitle className="text-neon-blue flex items-center group-hover:text-neon-green transition-colors duration-300">
-                  <User className="w-6 h-6 mr-3" />
-                  Personal Information
+            <Card className="bg-black/90 backdrop-blur-2xl border-2 border-neon-blue/30 hover:border-neon-blue/80 transition-all duration-500 group rounded-3xl shadow-2xl hover:shadow-neon transform hover:scale-105">
+              <CardHeader className="pb-6">
+                <CardTitle className="text-neon-blue flex items-center group-hover:text-neon-green transition-colors duration-300 text-2xl">
+                  <Code className="w-8 h-8 mr-4 animate-pulse" />
+                  What I Do
                 </CardTitle>
               </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="grid grid-cols-2 gap-4 text-sm">
-                  <div>
-                    <span className="text-gray-400">Age:</span>
-                    <span className="text-white ml-2">22 years</span>
+              <CardContent className="space-y-6">
+                <div className="space-y-4">
+                  <div className="flex items-start space-x-4">
+                    <div className="w-3 h-3 bg-neon-blue rounded-full mt-2 animate-pulse"></div>
+                    <div>
+                      <h4 className="text-white font-semibold mb-1">Full-Stack Development</h4>
+                      <p className="text-gray-400 text-sm">Building end-to-end web applications with modern technologies</p>
+                    </div>
                   </div>
-                  <div>
-                    <span className="text-gray-400">Degree:</span>
-                    <span className="text-white ml-2">B.Tech CSE-AI</span>
+                  <div className="flex items-start space-x-4">
+                    <div className="w-3 h-3 bg-neon-pink rounded-full mt-2 animate-pulse delay-200"></div>
+                    <div>
+                      <h4 className="text-white font-semibold mb-1">AI/ML Solutions</h4>
+                      <p className="text-gray-400 text-sm">Developing intelligent systems using machine learning</p>
+                    </div>
                   </div>
-                  <div>
-                    <span className="text-gray-400">Year:</span>
-                    <span className="text-white ml-2">Final Year</span>
-                  </div>
-                  <div>
-                    <span className="text-gray-400">Languages:</span>
-                    <span className="text-white ml-2">English, Hindi, Odia</span>
+                  <div className="flex items-start space-x-4">
+                    <div className="w-3 h-3 bg-neon-green rounded-full mt-2 animate-pulse delay-400"></div>
+                    <div>
+                      <h4 className="text-white font-semibold mb-1">UI/UX Design</h4>
+                      <p className="text-gray-400 text-sm">Creating intuitive and beautiful user experiences</p>
+                    </div>
                   </div>
                 </div>
-                <Separator className="bg-gray-700" />
                 <div>
-                  <h4 className="text-neon-green font-semibold mb-2">Interests</h4>
+                  <h4 className="text-neon-green font-semibold mb-3 text-lg">Core Interests</h4>
                   <div className="flex flex-wrap gap-2">
-                    {["AI/ML", "Web Development", "UI/UX Design", "Photography", "Technology", "Innovation"].map((interest, index) => (
-                      <Badge key={index} variant="outline" className="border-neon-green/30 text-neon-green bg-neon-green/5">
+                    {["AI/ML", "Web Development", "UI/UX Design", "Innovation", "Technology"].map((interest, index) => (
+                      <Badge key={index} variant="outline" className="border-neon-green/30 text-neon-green bg-neon-green/5 hover:bg-neon-green/20 transition-colors duration-300">
                         {interest}
                       </Badge>
                     ))}
@@ -381,43 +405,44 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Experience Section */}
-      <section id="experience" className="py-20">
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 gradient-text">Professional Experience</h2>
+      {/* Enhanced Experience Section */}
+      <section id="experience" className="py-24 relative">
+        <div className="absolute inset-0 bg-gradient-to-b from-black via-gray-900/50 to-black"></div>
+        <div className="container mx-auto px-6 relative z-10">
+          <h2 className="text-5xl md:text-6xl font-bold text-center mb-20 bg-gradient-to-r from-neon-blue via-neon-pink to-neon-green bg-clip-text text-transparent">Professional Experience</h2>
           
-          <div className="space-y-8">
+          <div className="space-y-12">
             {experiences.map((exp, index) => (
-              <Card key={index} className="bg-black/90 backdrop-blur-xl border border-gray-800 hover:border-neon-pink/50 transition-all duration-500">
-                <CardHeader>
+              <Card key={index} className="bg-black/95 backdrop-blur-2xl border-2 border-gray-800 hover:border-neon-pink/60 transition-all duration-500 rounded-3xl shadow-2xl hover:shadow-neon transform hover:scale-105">
+                <CardHeader className="pb-8">
                   <div className="flex flex-col md:flex-row md:items-center md:justify-between">
                     <div>
-                      <CardTitle className="text-neon-blue text-2xl mb-2">{exp.title}</CardTitle>
-                      <CardDescription className="text-gray-300 font-medium text-lg">
+                      <CardTitle className="text-neon-blue text-3xl mb-3 font-bold">{exp.title}</CardTitle>
+                      <CardDescription className="text-gray-300 font-medium text-xl">
                         {exp.company}
                       </CardDescription>
                     </div>
-                    <div className="text-right mt-4 md:mt-0">
-                      <Badge variant="outline" className="border-neon-green/50 text-neon-green bg-neon-green/5 mb-2">
+                    <div className="text-right mt-6 md:mt-0">
+                      <Badge variant="outline" className="border-neon-green/50 text-neon-green bg-neon-green/10 mb-3 px-4 py-2 text-lg">
                         {exp.duration}
                       </Badge>
-                      <p className="text-sm text-gray-400">{exp.period}</p>
+                      <p className="text-sm text-gray-400 font-medium">{exp.period}</p>
                     </div>
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-300 mb-8 leading-relaxed text-lg">{exp.description}</p>
+                  <p className="text-gray-300 mb-10 leading-relaxed text-lg">{exp.description}</p>
                   
-                  <div className="grid md:grid-cols-2 gap-8">
+                  <div className="grid md:grid-cols-2 gap-10">
                     <div>
-                      <h4 className="font-semibold text-neon-pink mb-4 flex items-center">
-                        <Star className="w-5 h-5 mr-2" />
+                      <h4 className="font-bold text-neon-pink mb-6 flex items-center text-xl">
+                        <CheckCircle className="w-6 h-6 mr-3 animate-pulse" />
                         Key Achievements
                       </h4>
-                      <ul className="space-y-3">
+                      <ul className="space-y-4">
                         {exp.achievements.map((achievement, achievementIndex) => (
-                          <li key={achievementIndex} className="text-gray-300 flex items-start">
-                            <div className="w-2 h-2 bg-neon-yellow rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                          <li key={achievementIndex} className="text-gray-300 flex items-start text-lg">
+                            <div className="w-2 h-2 bg-neon-yellow rounded-full mr-4 mt-3 flex-shrink-0 animate-pulse"></div>
                             {achievement}
                           </li>
                         ))}
@@ -425,24 +450,24 @@ const Index = () => {
                     </div>
                     
                     <div>
-                      <h4 className="font-semibold text-neon-blue mb-4 flex items-center">
-                        <Code className="w-5 h-5 mr-2" />
+                      <h4 className="font-bold text-neon-blue mb-6 flex items-center text-xl">
+                        <Code className="w-6 h-6 mr-3 animate-pulse" />
                         Technologies & Projects
                       </h4>
-                      <div className="space-y-4">
-                        <div className="flex flex-wrap gap-2">
+                      <div className="space-y-6">
+                        <div className="flex flex-wrap gap-3">
                           {exp.skills.map((skill, skillIndex) => (
-                            <Badge key={skillIndex} variant="secondary" className="bg-gray-900/80 text-white border border-gray-700">
+                            <Badge key={skillIndex} variant="secondary" className="bg-gray-900/80 text-white border border-gray-600 hover:border-neon-blue hover:bg-neon-blue/10 transition-all duration-300 px-3 py-1">
                               {skill}
                             </Badge>
                           ))}
                         </div>
                         <div>
-                          <h5 className="text-sm font-medium text-gray-400 mb-2">Key Projects:</h5>
-                          <ul className="text-sm text-gray-300">
+                          <h5 className="text-sm font-medium text-gray-400 mb-3">Key Projects:</h5>
+                          <ul className="text-sm text-gray-300 space-y-2">
                             {exp.projects.map((project, projectIndex) => (
                               <li key={projectIndex} className="flex items-center">
-                                <div className="w-1 h-1 bg-neon-blue rounded-full mr-2"></div>
+                                <div className="w-2 h-2 bg-neon-blue rounded-full mr-3 animate-pulse"></div>
                                 {project}
                               </li>
                             ))}
@@ -458,28 +483,42 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Projects Section */}
-      <section id="projects" className="py-20 bg-gradient-to-b from-gray-900/50 to-black">
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 gradient-text">Featured Projects</h2>
+      {/* Enhanced Projects Section */}
+      <section id="projects" className="py-24 bg-gradient-to-b from-gray-900/50 via-black to-gray-900/50 relative">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_25%,rgba(0,240,255,0.05),transparent_50%)]"></div>
+        <div className="container mx-auto px-6 relative z-10">
+          <h2 className="text-5xl md:text-6xl font-bold text-center mb-20 bg-gradient-to-r from-neon-blue via-neon-pink to-neon-green bg-clip-text text-transparent">Featured Projects</h2>
           
-          <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-8">
+          <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-10">
             {projects.map((project, index) => (
-              <Card key={index} className="bg-black/90 backdrop-blur-xl border border-gray-800 hover:border-neon-green/50 transition-all duration-500 hover:scale-105 group">
-                <CardHeader>
-                  <CardTitle className="text-white group-hover:text-neon-green transition-colors duration-300">{project.title}</CardTitle>
-                  <CardDescription className="text-gray-400 leading-relaxed">
+              <Card key={index} className="bg-black/95 backdrop-blur-2xl border-2 border-gray-800 hover:border-neon-green/60 transition-all duration-500 hover:scale-105 group rounded-3xl shadow-2xl hover:shadow-neon overflow-hidden">
+                <div className="absolute top-0 right-0 p-4">
+                  <Badge variant="outline" className={`
+                    ${project.status === 'Production Ready' ? 'border-neon-green text-neon-green bg-neon-green/10' : ''}
+                    ${project.status === 'Active Development' ? 'border-neon-blue text-neon-blue bg-neon-blue/10' : ''}
+                    ${project.status === 'Research Phase' ? 'border-neon-yellow text-neon-yellow bg-neon-yellow/10' : ''}
+                    animate-pulse
+                  `}>
+                    {project.status}
+                  </Badge>
+                </div>
+                <CardHeader className="pb-6">
+                  <CardTitle className="text-white group-hover:text-neon-green transition-colors duration-300 text-2xl font-bold">{project.title}</CardTitle>
+                  <CardDescription className="text-gray-400 leading-relaxed text-lg">
                     {project.description}
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <div className="space-y-6">
+                  <div className="space-y-8">
                     <div>
-                      <h4 className="text-sm font-semibold text-neon-pink mb-3">Key Features</h4>
-                      <ul className="text-sm text-gray-300 space-y-2">
+                      <h4 className="text-lg font-bold text-neon-pink mb-4 flex items-center">
+                        <Star className="w-5 h-5 mr-2 animate-pulse" />
+                        Key Features
+                      </h4>
+                      <ul className="text-sm text-gray-300 space-y-3">
                         {project.features.map((feature, featureIndex) => (
                           <li key={featureIndex} className="flex items-center">
-                            <div className="w-2 h-2 bg-neon-blue rounded-full mr-3"></div>
+                            <div className="w-2 h-2 bg-neon-blue rounded-full mr-4 animate-pulse"></div>
                             {feature}
                           </li>
                         ))}
@@ -487,11 +526,14 @@ const Index = () => {
                     </div>
                     
                     <div>
-                      <h4 className="text-sm font-semibold text-neon-yellow mb-3">Project Highlights</h4>
-                      <ul className="text-sm text-gray-300 space-y-2">
+                      <h4 className="text-lg font-bold text-neon-yellow mb-4 flex items-center">
+                        <Trophy className="w-5 h-5 mr-2 animate-pulse" />
+                        Project Highlights
+                      </h4>
+                      <ul className="text-sm text-gray-300 space-y-3">
                         {project.highlights.map((highlight, highlightIndex) => (
                           <li key={highlightIndex} className="flex items-center">
-                            <Star className="w-3 h-3 text-neon-yellow mr-2" />
+                            <CheckCircle className="w-4 h-4 text-neon-yellow mr-3 animate-pulse" />
                             {highlight}
                           </li>
                         ))}
@@ -500,20 +542,16 @@ const Index = () => {
                     
                     <div className="flex flex-wrap gap-2">
                       {project.tech.map((tech, techIndex) => (
-                        <Badge key={techIndex} variant="outline" className="border-neon-blue/30 text-neon-blue bg-neon-blue/5">
+                        <Badge key={techIndex} variant="outline" className="border-neon-blue/30 text-neon-blue bg-neon-blue/10 hover:bg-neon-blue/20 transition-colors duration-300">
                           {tech}
                         </Badge>
                       ))}
                     </div>
                     
-                    <div className="flex gap-3">
-                      <Button size="sm" variant="outline" className="border-neon-green/50 text-neon-green hover:bg-neon-green/10 flex-1">
-                        <Github className="w-4 h-4 mr-2" />
-                        Code
-                      </Button>
-                      <Button size="sm" variant="outline" className="border-neon-blue/50 text-neon-blue hover:bg-neon-blue/10 flex-1">
-                        <Eye className="w-4 h-4 mr-2" />
-                        Demo
+                    <div className="flex gap-4">
+                      <Button size="lg" variant="outline" className="border-neon-green/50 text-neon-green hover:bg-neon-green/20 flex-1 rounded-full font-semibold transition-all duration-300 transform hover:scale-105">
+                        <Github className="w-5 h-5 mr-2" />
+                        View Code
                       </Button>
                     </div>
                   </div>
@@ -524,26 +562,27 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Skills Section */}
-      <section id="skills" className="py-20">
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 gradient-text">Skills & Expertise</h2>
+      {/* Enhanced Skills Section */}
+      <section id="skills" className="py-24 relative">
+        <div className="absolute inset-0 bg-gradient-to-b from-black via-gray-900/30 to-black"></div>
+        <div className="container mx-auto px-6 relative z-10">
+          <h2 className="text-5xl md:text-6xl font-bold text-center mb-20 bg-gradient-to-r from-neon-blue via-neon-pink to-neon-green bg-clip-text text-transparent">Skills & Expertise</h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
             {skillsData.map((skill, index) => (
-              <Card key={index} className="bg-black/80 backdrop-blur-xl border border-gray-800 hover:border-neon-blue/50 transition-all duration-500 hover:scale-105 group cursor-pointer">
-                <CardContent className="p-6">
-                  <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-r from-neon-blue/20 to-neon-pink/20 flex items-center justify-center group-hover:from-neon-blue/40 group-hover:to-neon-pink/40 transition-all duration-300">
-                    <skill.icon className="w-8 h-8 text-neon-blue group-hover:text-neon-pink transition-colors duration-300" />
+              <Card key={index} className="bg-black/90 backdrop-blur-2xl border-2 border-gray-800 hover:border-neon-blue/60 transition-all duration-500 hover:scale-110 group cursor-pointer rounded-3xl shadow-2xl hover:shadow-neon">
+                <CardContent className="p-8">
+                  <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-gradient-to-r from-neon-blue/30 to-neon-pink/30 flex items-center justify-center group-hover:from-neon-blue/60 group-hover:to-neon-pink/60 transition-all duration-300 shadow-2xl">
+                    <skill.icon className="w-10 h-10 text-neon-blue group-hover:text-neon-pink transition-colors duration-300 animate-pulse" />
                   </div>
-                  <h3 className="font-semibold text-white mb-2 text-center group-hover:text-neon-blue transition-colors duration-300">{skill.name}</h3>
-                  <div className="text-center mb-3">
-                    <Badge variant="secondary" className="mb-2 bg-gray-900/80 text-gray-300 border border-gray-700">
+                  <h3 className="font-bold text-white mb-3 text-center group-hover:text-neon-blue transition-colors duration-300 text-xl">{skill.name}</h3>
+                  <div className="text-center mb-4">
+                    <Badge variant="secondary" className="mb-3 bg-gray-900/80 text-gray-300 border border-gray-700 px-3 py-1">
                       {skill.category}
                     </Badge>
-                    <p className="text-sm font-medium text-neon-green">{skill.level}</p>
+                    <p className="text-lg font-bold text-neon-green">{skill.level}</p>
                   </div>
-                  <p className="text-xs text-gray-400 text-center leading-relaxed">{skill.description}</p>
+                  <p className="text-sm text-gray-400 text-center leading-relaxed">{skill.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -872,13 +911,13 @@ const Index = () => {
         </div>
       </footer>
 
-      {/* Scroll to Top Button */}
+      {/* Enhanced Scroll to Top Button */}
       {showScrollTop && (
         <Button
           onClick={scrollToTop}
-          className="fixed bottom-8 right-8 z-50 rounded-full w-14 h-14 p-0 bg-gradient-to-r from-neon-blue to-neon-pink hover:from-neon-pink hover:to-neon-blue text-black animate-glow"
+          className="fixed bottom-8 right-8 z-50 rounded-full w-16 h-16 p-0 bg-gradient-to-r from-neon-blue via-neon-pink to-neon-green hover:from-neon-green hover:via-neon-yellow hover:to-neon-blue text-black shadow-2xl hover:shadow-neon transform hover:scale-110 transition-all duration-500"
         >
-          <ArrowUp className="w-6 h-6" />
+          <ArrowUp className="w-8 h-8 animate-pulse" />
         </Button>
       )}
     </div>
