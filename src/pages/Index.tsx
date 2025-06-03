@@ -116,8 +116,7 @@ const Index = () => {
       tech: ["Java", "MySQL", "Swing", "JDBC"],
       github: "https://github.com/abinashdash",
       features: ["CRUD Operations", "Advanced Search & Filter", "Data Export to CSV/Excel", "Contact Categories", "Backup & Restore"],
-      highlights: ["Handles 10,000+ contacts efficiently", "Real-time search with instant results", "User-friendly interface with modern design"],
-      status: "Production Ready"
+      highlights: ["Handles 10,000+ contacts efficiently", "Real-time search with instant results", "User-friendly interface with modern design"]
     },
     {
       title: "Face Detection System",
@@ -125,8 +124,7 @@ const Index = () => {
       tech: ["Python", "OpenCV", "TensorFlow", "NumPy", "Matplotlib"],
       github: "https://github.com/abinashdash",
       features: ["Real-time Detection", "Multi-face Recognition", "Performance Analytics", "Age & Gender Detection", "Emotion Recognition"],
-      highlights: ["95%+ accuracy rate", "Real-time processing at 30 FPS", "Works with multiple camera inputs"],
-      status: "Active Development"
+      highlights: ["95%+ accuracy rate", "Real-time processing at 30 FPS", "Works with multiple camera inputs"]
     },
     {
       title: "Age & Gender Detection",
@@ -134,8 +132,7 @@ const Index = () => {
       tech: ["Python", "Deep Learning", "CNN", "Keras", "OpenCV"],
       github: "https://github.com/abinashdash",
       features: ["High Accuracy Prediction", "Fast Processing", "Batch Analysis", "Analytics Dashboard", "Model Training Interface"],
-      highlights: ["92% age accuracy within 5 years", "98% gender classification accuracy", "Processes 100+ images per minute"],
-      status: "Research Phase"
+      highlights: ["92% age accuracy within 5 years", "98% gender classification accuracy", "Processes 100+ images per minute"]
     }
   ];
 
@@ -565,16 +562,6 @@ const Index = () => {
           <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-10">
             {projects.map((project, index) => (
               <Card key={index} className="bg-black/95 backdrop-blur-2xl border-2 border-gray-800 hover:border-neon-green/60 transition-all duration-500 hover:scale-105 group rounded-3xl shadow-2xl hover:shadow-neon overflow-hidden">
-                <div className="absolute top-0 right-0 p-4">
-                  <Badge variant="outline" className={`
-                    ${project.status === 'Production Ready' ? 'border-neon-green text-neon-green bg-neon-green/10' : ''}
-                    ${project.status === 'Active Development' ? 'border-neon-blue text-neon-blue bg-neon-blue/10' : ''}
-                    ${project.status === 'Research Phase' ? 'border-neon-yellow text-neon-yellow bg-neon-yellow/10' : ''}
-                    animate-pulse
-                  `}>
-                    {project.status}
-                  </Badge>
-                </div>
                 <CardHeader className="pb-6">
                   <CardTitle className="text-white group-hover:text-neon-green transition-colors duration-300 text-2xl font-bold">{project.title}</CardTitle>
                   <CardDescription className="text-gray-400 leading-relaxed text-lg">
@@ -937,16 +924,6 @@ const Index = () => {
                     Send Message
                   </Button>
                 </form>
-                
-                <div className="mt-8 p-6 bg-neon-blue/5 border-2 border-neon-blue/20 rounded-2xl">
-                  <p className="text-lg text-gray-300">
-                    <strong className="text-neon-blue">Note:</strong> Currently, this form requires backend setup. 
-                    For immediate contact, please reach me directly at <span className="text-neon-pink font-semibold">abinashdash2022@gift.edu.in</span>
-                  </p>
-                  <p className="text-sm text-gray-400 mt-3">
-                    To enable email notifications, connect your project to Supabase and I'll help set up the email backend.
-                  </p>
-                </div>
               </CardContent>
             </Card>
           </div>
