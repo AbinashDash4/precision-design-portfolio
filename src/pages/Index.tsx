@@ -385,28 +385,28 @@ const Index = () => {
       {/* Enhanced About Section */}
       <section id="about" className="py-32 relative">
         <div className="container mx-auto px-6 relative z-10">
-          <h2 className="text-6xl md:text-7xl font-bold text-center mb-24 bg-gradient-to-r from-cyan-400 via-purple-400 to-emerald-400 bg-clip-text text-transparent">About Me</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-24 bg-gradient-to-r from-cyan-400 via-purple-400 to-emerald-400 bg-clip-text text-transparent">About Me</h2>
           
           <div className="grid lg:grid-cols-2 gap-16 max-w-7xl mx-auto">
             <Card className="bg-gradient-to-br from-gray-900/80 to-gray-800/80 backdrop-blur-2xl border border-gray-700/50 hover:border-cyan-400/50 transition-all duration-500 rounded-3xl shadow-2xl shadow-black/50 hover:shadow-cyan-500/20 group">
               <CardHeader className="p-8">
-                <CardTitle className="text-cyan-400 flex items-center text-2xl font-bold group-hover:text-cyan-300 transition-colors duration-300">
-                  <Sparkles className="w-8 h-8 mr-4 group-hover:rotate-12 transition-transform duration-300" />
+                <CardTitle className="text-cyan-400 flex items-center text-xl font-bold group-hover:text-cyan-300 transition-colors duration-300">
+                  <Sparkles className="w-6 h-6 mr-4 group-hover:rotate-12 transition-transform duration-300" />
                   Vision & Philosophy
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-6 p-8 pt-0">
-                <p className="text-gray-300 leading-relaxed text-lg">
+                <p className="text-gray-300 leading-relaxed text-base">
                   I believe in the transformative power of technology to create meaningful experiences. My approach combines 
                   cutting-edge technical skills with human-centered design thinking to build solutions that truly matter.
                 </p>
-                <p className="text-gray-300 leading-relaxed text-lg">
+                <p className="text-gray-300 leading-relaxed text-base">
                   Specializing in AI/ML and full-stack development, I'm passionate about creating intelligent systems 
                   that enhance human capabilities and solve real-world challenges.
                 </p>
                 <div className="flex flex-wrap gap-3 mt-6">
                   {["Innovation", "Excellence", "Impact", "Growth"].map((value, index) => (
-                    <Badge key={index} variant="outline" className="border-cyan-400/50 text-cyan-400 bg-cyan-400/10 px-4 py-2 text-sm font-medium hover:bg-cyan-400/20 transition-colors duration-300">
+                    <Badge key={index} variant="outline" className="border-cyan-400/50 text-cyan-400 bg-cyan-400/10 px-3 py-1 text-sm font-medium hover:bg-cyan-400/20 transition-colors duration-300">
                       {value}
                     </Badge>
                   ))}
@@ -416,8 +416,8 @@ const Index = () => {
 
             <Card className="bg-gradient-to-br from-gray-900/80 to-gray-800/80 backdrop-blur-2xl border border-gray-700/50 hover:border-emerald-400/50 transition-all duration-500 rounded-3xl shadow-2xl shadow-black/50 hover:shadow-emerald-500/20 group">
               <CardHeader className="p-8">
-                <CardTitle className="text-emerald-400 flex items-center text-2xl font-bold group-hover:text-emerald-300 transition-colors duration-300">
-                  <Code className="w-8 h-8 mr-4 group-hover:rotate-12 transition-transform duration-300" />
+                <CardTitle className="text-emerald-400 flex items-center text-xl font-bold group-hover:text-emerald-300 transition-colors duration-300">
+                  <Code className="w-6 h-6 mr-4 group-hover:rotate-12 transition-transform duration-300" />
                   What I Do
                 </CardTitle>
               </CardHeader>
@@ -426,22 +426,22 @@ const Index = () => {
                   <div className="flex items-start space-x-4 group/item hover:bg-white/5 p-4 rounded-2xl transition-all duration-300">
                     <div className="w-3 h-3 bg-emerald-400 rounded-full mt-2 group-hover/item:scale-125 transition-transform duration-300"></div>
                     <div>
-                      <h4 className="text-white font-semibold mb-2 text-lg">AI/ML Development</h4>
-                      <p className="text-gray-400">Building intelligent systems with deep learning and computer vision</p>
+                      <h4 className="text-white font-semibold mb-2 text-base">AI/ML Development</h4>
+                      <p className="text-gray-400 text-sm">Building intelligent systems with deep learning and computer vision</p>
                     </div>
                   </div>
                   <div className="flex items-start space-x-4 group/item hover:bg-white/5 p-4 rounded-2xl transition-all duration-300">
                     <div className="w-3 h-3 bg-cyan-400 rounded-full mt-2 group-hover/item:scale-125 transition-transform duration-300"></div>
                     <div>
-                      <h4 className="text-white font-semibold mb-2 text-lg">Full-Stack Development</h4>
-                      <p className="text-gray-400">Creating scalable web applications with modern technologies</p>
+                      <h4 className="text-white font-semibold mb-2 text-base">Full-Stack Development</h4>
+                      <p className="text-gray-400 text-sm">Creating scalable web applications with modern technologies</p>
                     </div>
                   </div>
                   <div className="flex items-start space-x-4 group/item hover:bg-white/5 p-4 rounded-2xl transition-all duration-300">
                     <div className="w-3 h-3 bg-purple-400 rounded-full mt-2 group-hover/item:scale-125 transition-transform duration-300"></div>
                     <div>
-                      <h4 className="text-white font-semibold mb-2 text-lg">UI/UX Design</h4>
-                      <p className="text-gray-400">Designing intuitive and beautiful user experiences</p>
+                      <h4 className="text-white font-semibold mb-2 text-base">UI/UX Design</h4>
+                      <p className="text-gray-400 text-sm">Designing intuitive and beautiful user experiences</p>
                     </div>
                   </div>
                 </div>
@@ -893,3 +893,5 @@ const Index = () => {
 };
 
 export default Index;
+
+</edits_to_apply>
