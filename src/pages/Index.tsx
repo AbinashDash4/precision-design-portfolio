@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -296,7 +295,7 @@ const Index = () => {
           <div className="flex justify-between items-center">
             <div className="flex items-center group">
               <div className="relative">
-                <span className="text-2xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-emerald-400 bg-clip-text text-transparent">
+                <span className="text-xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-emerald-400 bg-clip-text text-transparent">
                   Abinash Dash
                 </span>
                 <div className="absolute -top-1 -right-1 w-2 h-2 bg-emerald-400 rounded-full animate-ping"></div>
@@ -330,26 +329,26 @@ const Index = () => {
       {/* Enhanced Hero Section */}
       <section id="hero" className="min-h-screen flex items-center justify-center relative pt-20">
         <div className="container mx-auto px-6 text-center relative z-10 max-w-7xl">
-          <div className="animate-float mb-16">
-            <div className="w-56 h-56 mx-auto mb-12 rounded-full bg-gradient-to-r from-cyan-500 via-purple-500 to-emerald-500 p-1 shadow-2xl shadow-cyan-500/30 hover:shadow-cyan-500/50 transition-all duration-500 group">
+          <div className="animate-float mb-12">
+            <div className="w-40 h-40 mx-auto mb-8 rounded-full bg-gradient-to-r from-cyan-500 via-purple-500 to-emerald-500 p-1 shadow-2xl shadow-cyan-500/30 hover:shadow-cyan-500/50 transition-all duration-500 group">
               <div className="w-full h-full rounded-full bg-gradient-to-br from-gray-900 to-black flex items-center justify-center group-hover:from-gray-800 group-hover:to-gray-900 transition-all duration-500">
-                <span className="text-5xl font-bold bg-gradient-to-r from-cyan-400 to-emerald-400 bg-clip-text text-transparent">AD</span>
+                <span className="text-3xl font-bold bg-gradient-to-r from-cyan-400 to-emerald-400 bg-clip-text text-transparent">AD</span>
               </div>
             </div>
           </div>
           
-          <div className="mb-12">
-            <h1 className="text-7xl md:text-8xl lg:text-9xl font-bold mb-6 bg-gradient-to-r from-cyan-400 via-purple-400 to-emerald-400 bg-clip-text text-transparent leading-tight tracking-tight">
+          <div className="mb-8">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 bg-gradient-to-r from-cyan-400 via-purple-400 to-emerald-400 bg-clip-text text-transparent leading-tight tracking-tight">
               Abinash Dash
             </h1>
-            <div className="w-32 h-1.5 bg-gradient-to-r from-cyan-400 via-purple-400 to-emerald-400 mx-auto rounded-full shadow-lg shadow-cyan-500/50"></div>
+            <div className="w-24 h-1 bg-gradient-to-r from-cyan-400 via-purple-400 to-emerald-400 mx-auto rounded-full shadow-lg shadow-cyan-500/50"></div>
           </div>
           
-          <div className="mb-16 h-32 flex items-center justify-center">
-            <div className="text-center space-y-4">
-              <p className="text-2xl text-gray-300 font-light">I'm a passionate</p>
-              <div className="h-20 flex items-center justify-center">
-                <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-emerald-400 bg-clip-text text-transparent font-bold text-4xl md:text-5xl lg:text-6xl">
+          <div className="mb-12 h-24 flex items-center justify-center">
+            <div className="text-center space-y-2">
+              <p className="text-lg text-gray-300 font-light">I'm a passionate</p>
+              <div className="h-16 flex items-center justify-center">
+                <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-emerald-400 bg-clip-text text-transparent font-bold text-2xl md:text-3xl lg:text-4xl">
                   {currentProfessionText}
                   {isTyping && <span className="animate-pulse text-emerald-400">|</span>}
                 </span>
@@ -357,8 +356,8 @@ const Index = () => {
             </div>
           </div>
 
-          <div className="mb-20">
-            <p className="text-2xl md:text-3xl lg:text-4xl mb-8 text-gray-200 max-w-5xl mx-auto leading-relaxed font-light">
+          <div className="mb-16">
+            <p className="text-lg md:text-xl lg:text-2xl mb-6 text-gray-200 max-w-4xl mx-auto leading-relaxed font-light">
               <span className="bg-gradient-to-r from-emerald-400 via-cyan-400 to-purple-400 bg-clip-text text-transparent font-medium">
                 {typewriterText}
                 <span className="animate-pulse text-emerald-400">|</span>
@@ -366,17 +365,17 @@ const Index = () => {
             </p>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-8 justify-center items-center">
-            <Button className="bg-gradient-to-r from-cyan-500 via-purple-500 to-emerald-500 hover:from-cyan-600 hover:via-purple-600 hover:to-emerald-600 text-black font-bold px-16 py-8 text-xl rounded-full shadow-2xl hover:shadow-cyan-500/30 transform hover:scale-110 transition-all duration-500 border border-white/20">
-              <Download className="w-6 h-6 mr-3" />
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+            <Button className="bg-gradient-to-r from-cyan-500 via-purple-500 to-emerald-500 hover:from-cyan-600 hover:via-purple-600 hover:to-emerald-600 text-black font-bold px-12 py-6 text-lg rounded-full shadow-2xl hover:shadow-cyan-500/30 transform hover:scale-110 transition-all duration-500 border border-white/20">
+              <Download className="w-5 h-5 mr-2" />
               Download Resume
             </Button>
             <Button 
               variant="outline" 
-              className="border-2 border-emerald-400/50 text-emerald-400 hover:bg-emerald-400/20 hover:border-emerald-400 px-16 py-8 text-xl rounded-full shadow-2xl hover:shadow-emerald-500/20 transform hover:scale-110 transition-all duration-500 backdrop-blur-xl bg-white/5"
+              className="border-2 border-emerald-400/50 text-emerald-400 hover:bg-emerald-400/20 hover:border-emerald-400 px-12 py-6 text-lg rounded-full shadow-2xl hover:shadow-emerald-500/20 transform hover:scale-110 transition-all duration-500 backdrop-blur-xl bg-white/5"
               onClick={() => scrollToSection('contact')}
             >
-              <Mail className="w-6 h-6 mr-3" />
+              <Mail className="w-5 h-5 mr-2" />
               Get In Touch
             </Button>
           </div>
