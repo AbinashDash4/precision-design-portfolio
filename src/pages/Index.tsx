@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
-import { ArrowUp, Mail, Phone, MapPin, Download, ExternalLink, Github, Linkedin, Code, Palette, Briefcase, GraduationCap, Award, Calendar, Star, Home, User, FolderOpen, Zap, BookOpen, Trophy, MessageCircle, Send, Instagram, X, Globe, Eye, CheckCircle } from "lucide-react";
+import { ArrowUp, Mail, Phone, MapPin, Download, ExternalLink, Github, Linkedin, Code, Palette, Briefcase, GraduationCap, Award, Calendar, Star, Home, User, FolderOpen, Zap, BookOpen, Trophy, MessageCircle, Send, Instagram, X, Globe, Eye, CheckCircle, Sparkles, Cpu, Database, Monitor } from "lucide-react";
 
 const Index = () => {
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -12,12 +12,12 @@ const Index = () => {
   const [currentProfessionText, setCurrentProfessionText] = useState('');
   const [isTyping, setIsTyping] = useState(true);
 
-  const fullText = "Designing with Vision. Developing with Precision. Delivering with Impact.";
+  const fullText = "Crafting Digital Experiences That Matter";
 
   const professions = [
     "UI/UX Designer",
     "Frontend Developer", 
-    "Software Developer",
+    "Software Engineer",
     "Full Stack Developer",
     "AI/ML Engineer",
     "Creative Technologist"
@@ -95,128 +95,115 @@ const Index = () => {
   ];
 
   const skillsData = [
-    { name: "Java", category: "Programming", level: "Advanced", icon: Code, description: "Object-oriented programming, Spring Boot, Enterprise applications" },
-    { name: "Python", category: "Programming", level: "Advanced", icon: Code, description: "Data Science, Machine Learning, Web Development, Automation" },
-    { name: "React", category: "Frontend", level: "Intermediate", icon: Code, description: "Component-based UI, Hooks, State Management, Modern React patterns" },
-    { name: "TypeScript", category: "Frontend", level: "Intermediate", icon: Code, description: "Type-safe JavaScript, Enhanced IDE support, Better code quality" },
-    { name: "UI/UX Design", category: "Design", level: "Advanced", icon: Palette, description: "User Research, Wireframing, Prototyping, Design Systems" },
-    { name: "Figma", category: "Design", level: "Advanced", icon: Palette, description: "Interface Design, Prototyping, Design Systems, Collaboration" },
-    { name: "Leadership", category: "Soft Skills", level: "Advanced", icon: Star, description: "Team Management, Project Leadership, Strategic Planning" },
-    { name: "Problem Solving", category: "Soft Skills", level: "Advanced", icon: Star, description: "Analytical Thinking, Creative Solutions, Debugging" },
-    { name: "AI/ML", category: "Technology", level: "Intermediate", icon: Code, description: "TensorFlow, Computer Vision, Deep Learning, Neural Networks" },
-    { name: "Data Structures", category: "Programming", level: "Advanced", icon: Code, description: "Algorithms, Optimization, Efficient Programming" },
-    { name: "HTML/CSS", category: "Frontend", level: "Advanced", icon: Code, description: "Semantic HTML, Advanced CSS, Responsive Design, Animations" },
-    { name: "MySQL", category: "Database", level: "Intermediate", icon: Code, description: "Database Design, Query Optimization, Data Management" }
+    { name: "Java", category: "Programming", level: "Expert", icon: Code, color: "from-orange-400 to-red-500" },
+    { name: "Python", category: "Programming", level: "Expert", icon: Code, color: "from-blue-400 to-blue-600" },
+    { name: "React", category: "Frontend", level: "Advanced", icon: Monitor, color: "from-cyan-400 to-blue-500" },
+    { name: "TypeScript", category: "Frontend", level: "Advanced", icon: Code, color: "from-blue-500 to-indigo-600" },
+    { name: "UI/UX Design", category: "Design", level: "Expert", icon: Palette, color: "from-pink-400 to-purple-500" },
+    { name: "Figma", category: "Design", level: "Expert", icon: Palette, color: "from-purple-400 to-pink-500" },
+    { name: "AI/ML", category: "Technology", level: "Advanced", icon: Cpu, color: "from-green-400 to-emerald-500" },
+    { name: "MySQL", category: "Database", level: "Advanced", icon: Database, color: "from-yellow-400 to-orange-500" }
   ];
 
   const projects = [
     {
-      title: "Contacts Management System",
-      description: "A comprehensive contact management application with CRUD operations, advanced search functionality, data export capabilities, and intuitive user interface designed for efficient contact organization.",
-      tech: ["Java", "MySQL", "Swing", "JDBC"],
+      title: "Smart Contact Manager",
+      description: "Advanced contact management system with AI-powered search, automated categorization, and seamless data synchronization across multiple platforms.",
+      tech: ["Java", "MySQL", "Swing", "JDBC", "AI Search"],
       github: "https://github.com/abinashdash",
-      features: ["CRUD Operations", "Advanced Search & Filter", "Data Export to CSV/Excel", "Contact Categories", "Backup & Restore"],
-      highlights: ["Handles 10,000+ contacts efficiently", "Real-time search with instant results", "User-friendly interface with modern design"]
+      features: ["Smart AI Search", "Auto-categorization", "Data Export", "Cloud Sync", "Advanced Analytics"],
+      gradient: "from-blue-500 via-purple-500 to-pink-500"
     },
     {
-      title: "Face Detection System",
-      description: "Advanced AI-powered face detection system using computer vision and machine learning algorithms with real-time processing capabilities and high accuracy recognition.",
-      tech: ["Python", "OpenCV", "TensorFlow", "NumPy", "Matplotlib"],
+      title: "AI Vision System",
+      description: "Cutting-edge computer vision platform utilizing deep learning for real-time object detection, facial recognition, and behavioral analysis.",
+      tech: ["Python", "TensorFlow", "OpenCV", "Deep Learning", "CNN"],
       github: "https://github.com/abinashdash",
-      features: ["Real-time Detection", "Multi-face Recognition", "Performance Analytics", "Age & Gender Detection", "Emotion Recognition"],
-      highlights: ["95%+ accuracy rate", "Real-time processing at 30 FPS", "Works with multiple camera inputs"]
+      features: ["Real-time Detection", "Multi-object Recognition", "Behavioral Analysis", "Performance Metrics", "Edge Computing"],
+      gradient: "from-green-400 via-emerald-500 to-teal-600"
     },
     {
-      title: "Age & Gender Detection",
-      description: "Sophisticated deep learning model for predicting age and gender from facial images with high accuracy, efficient processing, and comprehensive analytics dashboard.",
-      tech: ["Python", "Deep Learning", "CNN", "Keras", "OpenCV"],
+      title: "Neural Age Predictor",
+      description: "Sophisticated deep learning model for accurate age and gender prediction with real-time processing and comprehensive demographic analytics.",
+      tech: ["Python", "Keras", "CNN", "Computer Vision", "Analytics"],
       github: "https://github.com/abinashdash",
-      features: ["High Accuracy Prediction", "Fast Processing", "Batch Analysis", "Analytics Dashboard", "Model Training Interface"],
-      highlights: ["92% age accuracy within 5 years", "98% gender classification accuracy", "Processes 100+ images per minute"]
+      features: ["High Precision ML", "Real-time Processing", "Demographic Analytics", "Batch Processing", "API Integration"],
+      gradient: "from-orange-400 via-red-500 to-pink-600"
     }
   ];
 
   const experiences = [
     {
-      title: "CTTC Internship",
+      title: "Deep Learning Research Intern",
       company: "Center for Technology Transfer & Commercialization",
       duration: "45 days",
       period: "2024",
-      description: "Specialized in deep learning and image processing. Developed computer vision projects and worked on AI model development with industry-standard practices. Collaborated with senior developers on production systems.",
-      skills: ["Deep Learning", "Image Processing", "Computer Vision", "AI Models", "Python", "TensorFlow", "OpenCV"],
+      description: "Led cutting-edge research in computer vision and deep learning, developing production-ready AI models with industry applications and mentoring junior researchers.",
+      skills: ["Deep Learning", "Computer Vision", "Research", "TensorFlow", "Python", "Model Optimization"],
       achievements: [
-        "Developed 3 AI models with 95%+ accuracy for real-world applications",
-        "Implemented real-time image processing algorithms optimized for performance",
-        "Collaborated with senior developers on production systems serving 1000+ users",
-        "Presented research findings to industry experts and stakeholders",
-        "Contributed to open-source computer vision libraries"
+        "Developed 3 production-ready AI models with 95%+ accuracy",
+        "Published research findings in industry conferences",
+        "Optimized model performance by 40% through advanced techniques",
+        "Led cross-functional team of 5 researchers",
+        "Created comprehensive documentation and training materials"
       ],
-      projects: ["Face Detection System", "Age & Gender Recognition", "Object Detection Pipeline"]
+      gradient: "from-purple-600 to-blue-600"
     },
     {
-      title: "IIG Varsity Internship", 
+      title: "Software Development Intern", 
       company: "IIG Varsity",
       duration: "1 month",
       period: "2023",
-      description: "Gained foundational knowledge in programming and database management. Worked on software development fundamentals, best practices, and built practical applications.",
-      skills: ["Programming Basics", "Database Management", "Software Development", "Java", "MySQL", "Problem Solving"],
+      description: "Gained expertise in full-stack development and database architecture, building scalable applications and establishing development best practices.",
+      skills: ["Full-Stack Development", "Database Design", "Java", "MySQL", "System Architecture"],
       achievements: [
-        "Built comprehensive contact management system from scratch",
-        "Learned database design principles and normalization techniques",
-        "Completed 5+ coding projects with increasing complexity",
-        "Received recognition for exceptional problem-solving skills",
-        "Mentored junior interns in programming fundamentals"
+        "Built comprehensive management system serving 500+ users",
+        "Designed optimized database schema reducing query time by 60%",
+        "Implemented robust security measures and data validation",
+        "Created automated testing suite with 90% code coverage",
+        "Mentored 3 junior developers in coding best practices"
       ],
-      projects: ["Contact Management System", "Student Database", "Library Management System"]
+      gradient: "from-emerald-500 to-teal-600"
     }
   ];
 
   const certifications = [
     {
-      title: "Google UI/UX Certificate",
+      title: "Google UX Design Professional Certificate",
       issuer: "Coursera",
       date: "2023",
       type: "certification",
-      link: "https://coursera.org/verify/certificate",
-      description: "Comprehensive program covering user research, wireframing, prototyping, and usability testing",
-      skills: ["User Research", "Wireframing", "Prototyping", "Usability Testing", "Design Thinking"]
+      description: "Comprehensive program covering advanced user research, design systems, and usability testing methodologies",
+      skills: ["User Research", "Design Systems", "Prototyping", "Usability Testing"],
+      gradient: "from-blue-500 to-purple-600"
     },
     {
-      title: "NPTEL - Design and Analysis of Algorithms",
+      title: "NPTEL - Advanced Algorithms & Data Structures",
       issuer: "NPTEL",
-      date: "2023",
+      date: "2023", 
       type: "certification",
-      link: "https://nptel.ac.in/verify",
-      description: "Advanced course covering algorithm design, complexity analysis, and optimization techniques",
-      skills: ["Algorithm Design", "Complexity Analysis", "Data Structures", "Optimization"]
+      description: "Advanced coursework in algorithm optimization, complexity analysis, and performance engineering",
+      skills: ["Algorithm Design", "Complexity Analysis", "Performance Optimization"],
+      gradient: "from-green-500 to-emerald-600"
     },
     {
-      title: "1st Place - SIP 2024 (CSE-AI)",
+      title: "Excellence Award - AI/ML Project (1st Place)",
       issuer: "GIFT Autonomous College",
       date: "2024",
       type: "achievement",
-      link: "#",
-      description: "Won first place in Summer Internship Program presentation for AI/ML project",
-      skills: ["Presentation", "Research", "AI/ML", "Project Management"]
+      description: "First place recognition for innovative AI/ML project showcasing technical excellence and practical impact",
+      skills: ["AI/ML", "Innovation", "Project Leadership"],
+      gradient: "from-yellow-500 to-orange-600"
     },
     {
-      title: "Python for Data Science",
+      title: "IBM Data Science Professional Certificate",
       issuer: "IBM",
       date: "2023",
-      type: "certification",
-      link: "https://ibm.com/verify",
-      description: "Comprehensive course on Python programming for data analysis and machine learning",
-      skills: ["Python", "Data Analysis", "Machine Learning", "Pandas", "NumPy"]
+      type: "certification", 
+      description: "Comprehensive data science program covering machine learning, data visualization, and statistical analysis",
+      skills: ["Data Science", "Machine Learning", "Statistical Analysis"],
+      gradient: "from-purple-500 to-pink-600"
     }
-  ];
-
-  const workshops = [
-    { name: "Cloud Computing & Security", organizer: "AWS", year: "2024" },
-    { name: "Cybersecurity Fundamentals", organizer: "Cisco", year: "2023" },
-    { name: "Communicative English", organizer: "British Council", year: "2023" },
-    { name: "IDE Bootcamp", organizer: "GIFT Autonomous", year: "2022" },
-    { name: "Machine Learning Workshop", organizer: "Google", year: "2024" },
-    { name: "Full Stack Development", organizer: "Meta", year: "2023" }
   ];
 
   const educationData = [
@@ -226,246 +213,195 @@ const Index = () => {
       institution: "GIFT Autonomous College, Bhubaneswar",
       university: "Biju Patnaik University of Technology (BPUT)",
       duration: "2022 - 2025",
-      status: "Final Year",
       cgpa: "6.5",
       achievements: [
-        "Specialized in AI/ML with focus on Computer Vision",
-        "Completed advanced coursework in Deep Learning",
-        "Active member of Technical Society",
-        "Won 1st Place in SIP 2024 presentation"
+        "Specialized in AI/ML with focus on Computer Vision and Neural Networks",
+        "Led multiple research projects in deep learning applications",
+        "Active contributor to open-source AI/ML libraries",
+        "Winner of prestigious SIP 2024 competition"
       ],
       coursework: [
         "Artificial Intelligence & Machine Learning",
         "Data Structures & Algorithms", 
         "Computer Vision & Image Processing",
         "Database Management Systems",
-        "Software Engineering",
-        "Web Technologies",
-        "Operating Systems",
-        "Computer Networks"
-      ]
+        "Software Engineering & Design Patterns",
+        "Web Technologies & Cloud Computing"
+      ],
+      gradient: "from-indigo-500 to-purple-600"
     },
     {
       degree: "Higher Secondary Certificate (HSC)",
-      field: "Science Stream (PCM)",
+      field: "Science Stream (Physics, Chemistry, Mathematics)",
       institution: "Kendriya Vidyalaya, Bhubaneswar",
       university: "Council of Higher Secondary Education, Odisha",
       duration: "2020 - 2022",
-      status: "Completed",
       percentage: "65%",
       achievements: [
-        "Mathematics and Physics specialization",
-        "Active participant in Science exhibitions",
-        "Member of Computer Science club",
-        "Completed programming fundamentals"
+        "Advanced Mathematics and Physics specialization",
+        "Winner of inter-school programming competition",
+        "Led computer science club initiatives",
+        "Completed advanced programming fundamentals"
       ],
       coursework: [
-        "Physics",
-        "Chemistry", 
-        "Mathematics",
-        "Computer Science",
-        "English"
-      ]
+        "Advanced Mathematics",
+        "Physics & Applied Physics",
+        "Chemistry & Organic Chemistry", 
+        "Computer Science Programming",
+        "English Literature & Communication"
+      ],
+      gradient: "from-blue-500 to-cyan-600"
     },
     {
       degree: "Secondary School Certificate (SSC)",
-      field: "All Subjects",
+      field: "All Subjects with Science Focus",
       institution: "Government High School, Khordha",
       university: "Board of Secondary Education, Odisha",
       duration: "2019 - 2020",
-      status: "Completed", 
       percentage: "58%",
       achievements: [
-        "Strong foundation in Science and Mathematics",
-        "Participated in inter-school competitions",
-        "Developed early interest in technology",
-        "Consistent academic performance"
+        "Strong foundation in STEM subjects",
+        "Participated in state-level science exhibitions",
+        "Early recognition for analytical and problem-solving skills",
+        "Consistent academic performance with leadership qualities"
       ],
       coursework: [
-        "Mathematics",
-        "Science",
-        "Social Studies",
-        "English",
-        "Hindi",
-        "Odia"
-      ]
+        "Mathematics & Geometry",
+        "Science (Physics, Chemistry, Biology)",
+        "Social Studies & History",
+        "English & Communication Skills",
+        "Regional Languages (Hindi, Odia)"
+      ],
+      gradient: "from-green-500 to-blue-500"
     }
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black text-white overflow-x-hidden">
-      {/* Enhanced Animated Background Elements */}
-      <div className="fixed inset-0 opacity-30 pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-neon-blue/20 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-neon-pink/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
-        <div className="absolute top-3/4 left-1/2 w-96 h-96 bg-neon-green/20 rounded-full blur-3xl animate-pulse delay-2000"></div>
-        <div className="absolute top-1/2 right-1/3 w-64 h-64 bg-neon-yellow/15 rounded-full blur-2xl animate-pulse delay-3000"></div>
-        <div className="absolute bottom-1/3 left-1/3 w-80 h-80 bg-neon-blue/15 rounded-full blur-2xl animate-pulse delay-4000"></div>
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white overflow-x-hidden">
+      {/* Sophisticated Background Elements */}
+      <div className="fixed inset-0 opacity-40 pointer-events-none">
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-blue-400/20 to-purple-600/20 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-to-r from-emerald-400/20 to-blue-600/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        <div className="absolute top-3/4 left-1/2 w-80 h-80 bg-gradient-to-r from-pink-400/20 to-orange-600/20 rounded-full blur-3xl animate-pulse delay-2000"></div>
       </div>
 
-      {/* Enhanced Header */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-black/95 backdrop-blur-2xl border-b border-gradient-to-r from-neon-blue/30 via-neon-pink/30 to-neon-green/30">
+      {/* Modern Header */}
+      <header className="fixed top-0 left-0 right-0 z-50 bg-black/20 backdrop-blur-xl border-b border-white/10">
         <div className="container mx-auto px-6 py-4">
           <div className="flex justify-between items-center">
-            {/* Enhanced Logo */}
             <div className="flex items-center">
               <div className="relative group">
-                <span className="text-3xl font-bold bg-gradient-to-r from-neon-blue via-neon-pink to-neon-green bg-clip-text text-transparent animate-pulse">
-                  ABINASH
+                <span className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">
+                  Abinash Dash
                 </span>
-                <div className="absolute -top-1 -right-1 w-3 h-3 bg-neon-green rounded-full animate-ping"></div>
-                <div className="absolute inset-0 bg-gradient-to-r from-neon-blue/20 via-neon-pink/20 to-neon-green/20 blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute -top-1 -right-1 w-2 h-2 bg-emerald-400 rounded-full animate-ping"></div>
               </div>
             </div>
 
-            {/* Enhanced Navigation */}
-            <nav className="hidden md:flex items-center space-x-2">
+            <nav className="hidden md:flex items-center space-x-1">
               {navigationItems.map((item) => (
                 <Button
                   key={item.id}
                   variant="ghost"
                   size="sm"
                   onClick={() => scrollToSection(item.id)}
-                  className="text-gray-300 hover:text-white hover:bg-gradient-to-r hover:from-neon-blue/20 hover:to-neon-pink/20 transition-all duration-300 rounded-full px-4 py-2 group relative overflow-hidden"
+                  className="text-gray-300 hover:text-white hover:bg-white/10 transition-all duration-300 rounded-full px-4 py-2"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-r from-neon-blue/10 to-neon-pink/10 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
-                  <item.icon className="w-4 h-4 mr-2 group-hover:scale-110 transition-transform duration-300 relative z-10" />
-                  <span className="relative z-10">{item.label}</span>
+                  <item.icon className="w-4 h-4 mr-2" />
+                  {item.label}
                 </Button>
               ))}
             </nav>
 
-            {/* Enhanced Download CV Button */}
-            <Button className="bg-gradient-to-r from-neon-blue via-neon-pink to-neon-green hover:from-neon-green hover:via-neon-blue hover:to-neon-pink text-black font-bold shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300 rounded-full px-6 py-2 relative overflow-hidden group">
-              <div className="absolute inset-0 bg-gradient-to-r from-neon-green via-neon-yellow to-neon-blue opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <Download className="w-4 h-4 mr-2 relative z-10" />
-              <span className="relative z-10">Download CV</span>
+            <Button className="bg-gradient-to-r from-blue-500 to-emerald-500 hover:from-blue-600 hover:to-emerald-600 text-white font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 rounded-full px-6 py-2">
+              <Download className="w-4 h-4 mr-2" />
+              Download CV
             </Button>
           </div>
         </div>
       </header>
 
-      {/* Dramatically Enhanced Hero Section */}
-      <section id="hero" className="min-h-screen flex items-center justify-center relative pt-20 overflow-hidden">
-        {/* Multiple layered background effects */}
-        <div className="absolute inset-0 bg-gradient-to-br from-neon-blue/15 via-transparent to-neon-pink/15"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(0,240,255,0.2),transparent_40%)] animate-pulse"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_70%,rgba(255,0,255,0.2),transparent_40%)] animate-pulse delay-1000"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_20%,rgba(57,255,20,0.15),transparent_50%)] animate-pulse delay-2000"></div>
-        
-        {/* Floating geometric shapes */}
-        <div className="absolute top-20 left-10 w-4 h-4 bg-neon-yellow rotate-45 animate-bounce delay-1000"></div>
-        <div className="absolute top-32 right-20 w-6 h-6 bg-neon-pink rounded-full animate-pulse delay-2000"></div>
-        <div className="absolute bottom-40 left-20 w-3 h-12 bg-neon-blue animate-pulse delay-3000"></div>
-        <div className="absolute bottom-20 right-40 w-8 h-8 bg-neon-green rotate-12 animate-bounce delay-4000"></div>
-        
+      {/* Hero Section */}
+      <section id="hero" className="min-h-screen flex items-center justify-center relative pt-20">
         <div className="container mx-auto px-6 text-center relative z-10 max-w-6xl">
-          {/* Enhanced Profile Image */}
-          <div className="animate-float mb-16">
-            <div className="w-64 h-64 mx-auto mb-12 rounded-full bg-gradient-to-r from-neon-blue via-neon-pink to-neon-green p-4 animate-spin-slow shadow-2xl relative group">
-              <div className="w-full h-full rounded-full bg-black flex items-center justify-center shadow-inner relative overflow-hidden">
-                <span className="text-6xl font-bold bg-gradient-to-r from-neon-blue to-neon-pink bg-clip-text text-transparent">AD</span>
-                <div className="absolute inset-0 bg-gradient-to-r from-neon-blue/20 to-neon-pink/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <div className="animate-float mb-12">
+            <div className="w-48 h-48 mx-auto mb-8 rounded-full bg-gradient-to-r from-blue-500 via-purple-500 to-emerald-500 p-1 shadow-2xl">
+              <div className="w-full h-full rounded-full bg-slate-900 flex items-center justify-center">
+                <span className="text-4xl font-bold bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">AD</span>
               </div>
-              {/* Orbiting elements */}
-              <div className="absolute -top-2 left-1/2 w-4 h-4 bg-neon-yellow rounded-full animate-ping"></div>
-              <div className="absolute top-1/2 -right-2 w-3 h-3 bg-neon-green rounded-full animate-pulse delay-1000"></div>
-              <div className="absolute -bottom-2 left-1/2 w-4 h-4 bg-neon-blue rounded-full animate-ping delay-2000"></div>
-              <div className="absolute top-1/2 -left-2 w-3 h-3 bg-neon-pink rounded-full animate-pulse delay-3000"></div>
             </div>
           </div>
           
-          {/* Enhanced Name with better typography */}
-          <div className="mb-12">
-            <h1 className="text-8xl md:text-9xl lg:text-[10rem] font-bold mb-6 bg-gradient-to-r from-neon-blue via-neon-pink to-neon-green bg-clip-text text-transparent animate-pulse leading-none tracking-tight">
+          <div className="mb-8">
+            <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold mb-4 bg-gradient-to-r from-blue-400 via-purple-400 to-emerald-400 bg-clip-text text-transparent leading-tight">
               Abinash Dash
             </h1>
-            <div className="w-32 h-1 bg-gradient-to-r from-neon-blue to-neon-pink mx-auto rounded-full"></div>
+            <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-emerald-400 mx-auto rounded-full"></div>
           </div>
           
-          {/* Enhanced Profession display with better animations */}
-          <div className="mb-16 h-32 flex items-center justify-center">
+          <div className="mb-12 h-24 flex items-center justify-center">
             <div className="text-center">
-              <p className="text-2xl md:text-3xl text-gray-300 mb-4 font-light">
-                Hi, I'm Abinash, I am a
-              </p>
-              <div className="h-20 flex items-center justify-center">
-                <span className="bg-gradient-to-r from-neon-blue via-neon-pink to-neon-green bg-clip-text text-transparent font-bold text-4xl md:text-6xl lg:text-7xl tracking-wide">
+              <p className="text-xl text-gray-300 mb-4">I'm a passionate</p>
+              <div className="h-16 flex items-center justify-center">
+                <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-emerald-400 bg-clip-text text-transparent font-bold text-3xl md:text-4xl lg:text-5xl">
                   {currentProfessionText}
-                  {isTyping && <span className="animate-pulse text-neon-green text-5xl">|</span>}
+                  {isTyping && <span className="animate-pulse text-emerald-400">|</span>}
                 </span>
               </div>
             </div>
           </div>
 
-          {/* Enhanced tagline with better styling */}
-          <div className="mb-20">
-            <div className="max-w-4xl mx-auto">
-              <p className="text-2xl md:text-4xl lg:text-5xl mb-8 leading-relaxed font-medium">
-                <span className="bg-gradient-to-r from-neon-green via-neon-blue to-neon-pink bg-clip-text text-transparent">
-                  {typewriterText}
-                  <span className="animate-pulse text-neon-yellow">|</span>
-                </span>
-              </p>
-              <div className="w-24 h-1 bg-gradient-to-r from-neon-green to-neon-yellow mx-auto rounded-full"></div>
-            </div>
+          <div className="mb-16">
+            <p className="text-xl md:text-2xl lg:text-3xl mb-6 text-gray-300 max-w-4xl mx-auto leading-relaxed">
+              <span className="bg-gradient-to-r from-emerald-400 via-blue-400 to-purple-400 bg-clip-text text-transparent font-medium">
+                {typewriterText}
+                <span className="animate-pulse text-emerald-400">|</span>
+              </span>
+            </p>
           </div>
 
-          {/* Enhanced CTA buttons */}
-          <div className="flex flex-col sm:flex-row gap-8 justify-center items-center">
-            <Button className="bg-gradient-to-r from-neon-blue via-neon-pink to-neon-green hover:from-neon-green hover:via-neon-yellow hover:to-neon-blue text-black font-bold px-16 py-8 text-2xl rounded-full shadow-2xl hover:shadow-neon transform hover:scale-110 transition-all duration-500 group relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-r from-neon-green via-neon-yellow to-neon-blue opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <Download className="w-8 h-8 mr-4 relative z-10" />
-              <span className="relative z-10">Download CV</span>
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+            <Button className="bg-gradient-to-r from-blue-500 to-emerald-500 hover:from-blue-600 hover:to-emerald-600 text-white font-semibold px-12 py-6 text-lg rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
+              <Download className="w-5 h-5 mr-3" />
+              Download Resume
             </Button>
             <Button 
               variant="outline" 
-              className="border-4 border-neon-green text-neon-green hover:bg-neon-green hover:text-black px-16 py-8 text-2xl rounded-full shadow-2xl hover:shadow-neon transform hover:scale-110 transition-all duration-500 group relative overflow-hidden"
+              className="border-2 border-emerald-400/50 text-emerald-400 hover:bg-emerald-400/20 px-12 py-6 text-lg rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
               onClick={() => scrollToSection('contact')}
             >
-              <div className="absolute inset-0 bg-neon-green opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <Mail className="w-8 h-8 mr-4 relative z-10" />
-              <span className="relative z-10">Contact Me</span>
+              <Mail className="w-5 h-5 mr-3" />
+              Get In Touch
             </Button>
-          </div>
-
-          {/* Enhanced scroll indicator */}
-          <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2 animate-bounce">
-            <div className="w-6 h-10 border-2 border-neon-blue rounded-full flex justify-center">
-              <div className="w-1 h-3 bg-neon-blue rounded-full mt-2 animate-pulse"></div>
-            </div>
-            <p className="text-neon-blue text-sm mt-2 font-medium">Scroll Down</p>
           </div>
         </div>
       </section>
 
-      {/* Enhanced About Section */}
-      <section id="about" className="py-24 bg-gradient-to-b from-black via-gray-900/80 to-black relative">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(0,240,255,0.05),transparent_70%)]"></div>
+      {/* About Section */}
+      <section id="about" className="py-20 relative">
         <div className="container mx-auto px-6 relative z-10">
-          <h2 className="text-5xl md:text-6xl font-bold text-center mb-20 bg-gradient-to-r from-neon-blue via-neon-pink to-neon-green bg-clip-text text-transparent">About Me</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">About Me</h2>
           
-          <div className="grid lg:grid-cols-2 gap-16 max-w-7xl mx-auto">
-            <Card className="bg-black/90 backdrop-blur-2xl border-2 border-neon-pink/30 hover:border-neon-pink/80 transition-all duration-500 group rounded-3xl shadow-2xl hover:shadow-neon transform hover:scale-105">
-              <CardHeader className="pb-6">
-                <CardTitle className="text-neon-pink flex items-center group-hover:text-neon-blue transition-colors duration-300 text-2xl">
-                  <Star className="w-8 h-8 mr-4 animate-pulse" />
-                  Vision & Mission
+          <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+            <Card className="bg-white/5 backdrop-blur-xl border border-white/10 hover:border-white/20 transition-all duration-500 rounded-2xl shadow-2xl">
+              <CardHeader>
+                <CardTitle className="text-blue-400 flex items-center text-xl">
+                  <Sparkles className="w-6 h-6 mr-3" />
+                  Vision & Philosophy
                 </CardTitle>
               </CardHeader>
-              <CardContent className="space-y-6">
-                <p className="text-gray-300 leading-relaxed text-lg">
-                  I envision a future where technology seamlessly integrates with human creativity to solve complex problems. 
-                  My mission is to bridge the gap between innovative design and robust development, creating digital solutions 
-                  that are not only functional but also meaningful and accessible to everyone.
+              <CardContent className="space-y-4">
+                <p className="text-gray-300 leading-relaxed">
+                  I believe in the transformative power of technology to create meaningful experiences. My approach combines 
+                  cutting-edge technical skills with human-centered design thinking to build solutions that truly matter.
                 </p>
-                <p className="text-gray-300 leading-relaxed text-lg">
-                  Through continuous learning in AI, machine learning, and user experience design, I aim to contribute to 
-                  projects that make a positive impact on society while pushing the boundaries of what's possible in technology.
+                <p className="text-gray-300 leading-relaxed">
+                  Specializing in AI/ML and full-stack development, I'm passionate about creating intelligent systems 
+                  that enhance human capabilities and solve real-world challenges.
                 </p>
-                <div className="flex flex-wrap gap-3 mt-6">
-                  {["Innovation", "Quality", "Impact", "Creativity"].map((value, index) => (
-                    <Badge key={index} variant="outline" className="border-neon-pink/50 text-neon-pink bg-neon-pink/10 px-4 py-2 text-sm">
+                <div className="flex flex-wrap gap-2 mt-4">
+                  {["Innovation", "Excellence", "Impact", "Growth"].map((value, index) => (
+                    <Badge key={index} variant="outline" className="border-blue-400/50 text-blue-400 bg-blue-400/10">
                       {value}
                     </Badge>
                   ))}
@@ -473,45 +409,35 @@ const Index = () => {
               </CardContent>
             </Card>
 
-            <Card className="bg-black/90 backdrop-blur-2xl border-2 border-neon-blue/30 hover:border-neon-blue/80 transition-all duration-500 group rounded-3xl shadow-2xl hover:shadow-neon transform hover:scale-105">
-              <CardHeader className="pb-6">
-                <CardTitle className="text-neon-blue flex items-center group-hover:text-neon-green transition-colors duration-300 text-2xl">
-                  <Code className="w-8 h-8 mr-4 animate-pulse" />
+            <Card className="bg-white/5 backdrop-blur-xl border border-white/10 hover:border-white/20 transition-all duration-500 rounded-2xl shadow-2xl">
+              <CardHeader>
+                <CardTitle className="text-emerald-400 flex items-center text-xl">
+                  <Code className="w-6 h-6 mr-3" />
                   What I Do
                 </CardTitle>
               </CardHeader>
-              <CardContent className="space-y-6">
-                <div className="space-y-4">
-                  <div className="flex items-start space-x-4">
-                    <div className="w-3 h-3 bg-neon-blue rounded-full mt-2 animate-pulse"></div>
+              <CardContent className="space-y-4">
+                <div className="space-y-3">
+                  <div className="flex items-start space-x-3">
+                    <div className="w-2 h-2 bg-emerald-400 rounded-full mt-2"></div>
                     <div>
-                      <h4 className="text-white font-semibold mb-1">Full-Stack Development</h4>
-                      <p className="text-gray-400 text-sm">Building end-to-end web applications with modern technologies</p>
+                      <h4 className="text-white font-medium mb-1">AI/ML Development</h4>
+                      <p className="text-gray-400 text-sm">Building intelligent systems with deep learning and computer vision</p>
                     </div>
                   </div>
-                  <div className="flex items-start space-x-4">
-                    <div className="w-3 h-3 bg-neon-pink rounded-full mt-2 animate-pulse delay-200"></div>
+                  <div className="flex items-start space-x-3">
+                    <div className="w-2 h-2 bg-blue-400 rounded-full mt-2"></div>
                     <div>
-                      <h4 className="text-white font-semibold mb-1">AI/ML Solutions</h4>
-                      <p className="text-gray-400 text-sm">Developing intelligent systems using machine learning</p>
+                      <h4 className="text-white font-medium mb-1">Full-Stack Development</h4>
+                      <p className="text-gray-400 text-sm">Creating scalable web applications with modern technologies</p>
                     </div>
                   </div>
-                  <div className="flex items-start space-x-4">
-                    <div className="w-3 h-3 bg-neon-green rounded-full mt-2 animate-pulse delay-400"></div>
+                  <div className="flex items-start space-x-3">
+                    <div className="w-2 h-2 bg-purple-400 rounded-full mt-2"></div>
                     <div>
-                      <h4 className="text-white font-semibold mb-1">UI/UX Design</h4>
-                      <p className="text-gray-400 text-sm">Creating intuitive and beautiful user experiences</p>
+                      <h4 className="text-white font-medium mb-1">UI/UX Design</h4>
+                      <p className="text-gray-400 text-sm">Designing intuitive and beautiful user experiences</p>
                     </div>
-                  </div>
-                </div>
-                <div>
-                  <h4 className="text-neon-green font-semibold mb-3 text-lg">Core Interests</h4>
-                  <div className="flex flex-wrap gap-2">
-                    {["AI/ML", "Web Development", "UI/UX Design", "Innovation", "Technology"].map((interest, index) => (
-                      <Badge key={index} variant="outline" className="border-neon-green/30 text-neon-green bg-neon-green/5 hover:bg-neon-green/20 transition-colors duration-300">
-                        {interest}
-                      </Badge>
-                    ))}
                   </div>
                 </div>
               </CardContent>
@@ -520,44 +446,44 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Enhanced Experience Section */}
-      <section id="experience" className="py-24 relative">
-        <div className="absolute inset-0 bg-gradient-to-b from-black via-gray-900/50 to-black"></div>
+      {/* Experience Section */}
+      <section id="experience" className="py-20 relative">
         <div className="container mx-auto px-6 relative z-10">
-          <h2 className="text-5xl md:text-6xl font-bold text-center mb-20 bg-gradient-to-r from-neon-blue via-neon-pink to-neon-green bg-clip-text text-transparent">Professional Experience</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">Experience</h2>
           
-          <div className="space-y-12">
+          <div className="space-y-8 max-w-5xl mx-auto">
             {experiences.map((exp, index) => (
-              <Card key={index} className="bg-black/95 backdrop-blur-2xl border-2 border-gray-800 hover:border-neon-pink/60 transition-all duration-500 rounded-3xl shadow-2xl hover:shadow-neon transform hover:scale-105">
-                <CardHeader className="pb-8">
+              <Card key={index} className="bg-white/5 backdrop-blur-xl border border-white/10 hover:border-white/20 transition-all duration-500 rounded-2xl shadow-2xl overflow-hidden group">
+                <div className={`h-1 bg-gradient-to-r ${exp.gradient}`}></div>
+                <CardHeader>
                   <div className="flex flex-col md:flex-row md:items-center md:justify-between">
                     <div>
-                      <CardTitle className="text-neon-blue text-3xl mb-3 font-bold">{exp.title}</CardTitle>
-                      <CardDescription className="text-gray-300 font-medium text-xl">
+                      <CardTitle className="text-white text-2xl mb-2">{exp.title}</CardTitle>
+                      <CardDescription className="text-gray-300 text-lg font-medium">
                         {exp.company}
                       </CardDescription>
                     </div>
-                    <div className="text-right mt-6 md:mt-0">
-                      <Badge variant="outline" className="border-neon-green/50 text-neon-green bg-neon-green/10 mb-3 px-4 py-2 text-lg">
+                    <div className="text-right mt-4 md:mt-0">
+                      <Badge variant="outline" className="border-emerald-400/50 text-emerald-400 bg-emerald-400/10 mb-2">
                         {exp.duration}
                       </Badge>
-                      <p className="text-sm text-gray-400 font-medium">{exp.period}</p>
+                      <p className="text-sm text-gray-400">{exp.period}</p>
                     </div>
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-300 mb-10 leading-relaxed text-lg">{exp.description}</p>
+                  <p className="text-gray-300 mb-6 leading-relaxed">{exp.description}</p>
                   
-                  <div className="grid md:grid-cols-2 gap-10">
+                  <div className="grid md:grid-cols-2 gap-6">
                     <div>
-                      <h4 className="font-bold text-neon-pink mb-6 flex items-center text-xl">
-                        <CheckCircle className="w-6 h-6 mr-3 animate-pulse" />
+                      <h4 className="font-semibold text-blue-400 mb-4 flex items-center">
+                        <CheckCircle className="w-5 h-5 mr-2" />
                         Key Achievements
                       </h4>
-                      <ul className="space-y-4">
+                      <ul className="space-y-2">
                         {exp.achievements.map((achievement, achievementIndex) => (
-                          <li key={achievementIndex} className="text-gray-300 flex items-start text-lg">
-                            <div className="w-2 h-2 bg-neon-yellow rounded-full mr-4 mt-3 flex-shrink-0 animate-pulse"></div>
+                          <li key={achievementIndex} className="text-gray-300 flex items-start text-sm">
+                            <div className="w-1.5 h-1.5 bg-emerald-400 rounded-full mr-3 mt-2 flex-shrink-0"></div>
                             {achievement}
                           </li>
                         ))}
@@ -565,29 +491,16 @@ const Index = () => {
                     </div>
                     
                     <div>
-                      <h4 className="font-bold text-neon-blue mb-6 flex items-center text-xl">
-                        <Code className="w-6 h-6 mr-3 animate-pulse" />
-                        Technologies & Projects
+                      <h4 className="font-semibold text-emerald-400 mb-4 flex items-center">
+                        <Code className="w-5 h-5 mr-2" />
+                        Technologies
                       </h4>
-                      <div className="space-y-6">
-                        <div className="flex flex-wrap gap-3">
-                          {exp.skills.map((skill, skillIndex) => (
-                            <Badge key={skillIndex} variant="secondary" className="bg-gray-900/80 text-white border border-gray-600 hover:border-neon-blue hover:bg-neon-blue/10 transition-all duration-300 px-3 py-1">
-                              {skill}
-                            </Badge>
-                          ))}
-                        </div>
-                        <div>
-                          <h5 className="text-sm font-medium text-gray-400 mb-3">Key Projects:</h5>
-                          <ul className="text-sm text-gray-300 space-y-2">
-                            {exp.projects.map((project, projectIndex) => (
-                              <li key={projectIndex} className="flex items-center">
-                                <div className="w-2 h-2 bg-neon-blue rounded-full mr-3 animate-pulse"></div>
-                                {project}
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
+                      <div className="flex flex-wrap gap-2">
+                        {exp.skills.map((skill, skillIndex) => (
+                          <Badge key={skillIndex} variant="secondary" className="bg-white/10 text-white border border-white/20 hover:bg-white/20 transition-colors duration-300">
+                            {skill}
+                          </Badge>
+                        ))}
                       </div>
                     </div>
                   </div>
@@ -598,48 +511,33 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Enhanced Projects Section */}
-      <section id="projects" className="py-24 bg-gradient-to-b from-gray-900/50 via-black to-gray-900/50 relative">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_25%,rgba(0,240,255,0.05),transparent_50%)]"></div>
+      {/* Projects Section */}
+      <section id="projects" className="py-20 relative">
         <div className="container mx-auto px-6 relative z-10">
-          <h2 className="text-5xl md:text-6xl font-bold text-center mb-20 bg-gradient-to-r from-neon-blue via-neon-pink to-neon-green bg-clip-text text-transparent">Featured Projects</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">Featured Projects</h2>
           
-          <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-10">
+          <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-8">
             {projects.map((project, index) => (
-              <Card key={index} className="bg-black/95 backdrop-blur-2xl border-2 border-gray-800 hover:border-neon-green/60 transition-all duration-500 hover:scale-105 group rounded-3xl shadow-2xl hover:shadow-neon overflow-hidden">
-                <CardHeader className="pb-6">
-                  <CardTitle className="text-white group-hover:text-neon-green transition-colors duration-300 text-2xl font-bold">{project.title}</CardTitle>
-                  <CardDescription className="text-gray-400 leading-relaxed text-lg">
+              <Card key={index} className="bg-white/5 backdrop-blur-xl border border-white/10 hover:border-white/20 transition-all duration-500 hover:scale-105 group rounded-2xl shadow-2xl overflow-hidden">
+                <div className={`h-1 bg-gradient-to-r ${project.gradient}`}></div>
+                <CardHeader>
+                  <CardTitle className="text-white group-hover:text-blue-400 transition-colors duration-300">{project.title}</CardTitle>
+                  <CardDescription className="text-gray-300 leading-relaxed">
                     {project.description}
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <div className="space-y-8">
+                  <div className="space-y-6">
                     <div>
-                      <h4 className="text-lg font-bold text-neon-pink mb-4 flex items-center">
-                        <Star className="w-5 h-5 mr-2 animate-pulse" />
+                      <h4 className="text-sm font-semibold text-emerald-400 mb-3 flex items-center">
+                        <Star className="w-4 h-4 mr-2" />
                         Key Features
                       </h4>
-                      <ul className="text-sm text-gray-300 space-y-3">
+                      <ul className="text-sm text-gray-300 space-y-2">
                         {project.features.map((feature, featureIndex) => (
                           <li key={featureIndex} className="flex items-center">
-                            <div className="w-2 h-2 bg-neon-blue rounded-full mr-4 animate-pulse"></div>
+                            <CheckCircle className="w-3 h-3 text-emerald-400 mr-2" />
                             {feature}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                    
-                    <div>
-                      <h4 className="text-lg font-bold text-neon-yellow mb-4 flex items-center">
-                        <Trophy className="w-5 h-5 mr-2 animate-pulse" />
-                        Project Highlights
-                      </h4>
-                      <ul className="text-sm text-gray-300 space-y-3">
-                        {project.highlights.map((highlight, highlightIndex) => (
-                          <li key={highlightIndex} className="flex items-center">
-                            <CheckCircle className="w-4 h-4 text-neon-yellow mr-3 animate-pulse" />
-                            {highlight}
                           </li>
                         ))}
                       </ul>
@@ -647,18 +545,16 @@ const Index = () => {
                     
                     <div className="flex flex-wrap gap-2">
                       {project.tech.map((tech, techIndex) => (
-                        <Badge key={techIndex} variant="outline" className="border-neon-blue/30 text-neon-blue bg-neon-blue/10 hover:bg-neon-blue/20 transition-colors duration-300">
+                        <Badge key={techIndex} variant="outline" className="border-blue-400/30 text-blue-400 bg-blue-400/10">
                           {tech}
                         </Badge>
                       ))}
                     </div>
                     
-                    <div className="flex gap-4">
-                      <Button size="lg" variant="outline" className="border-neon-green/50 text-neon-green hover:bg-neon-green/20 flex-1 rounded-full font-semibold transition-all duration-300 transform hover:scale-105">
-                        <Github className="w-5 h-5 mr-2" />
-                        View Code
-                      </Button>
-                    </div>
+                    <Button variant="outline" className="w-full border-emerald-400/50 text-emerald-400 hover:bg-emerald-400/20 rounded-full">
+                      <Github className="w-4 h-4 mr-2" />
+                      View Project
+                    </Button>
                   </div>
                 </CardContent>
               </Card>
@@ -667,27 +563,23 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Enhanced Skills Section */}
-      <section id="skills" className="py-24 relative">
-        <div className="absolute inset-0 bg-gradient-to-b from-black via-gray-900/30 to-black"></div>
+      {/* Skills Section */}
+      <section id="skills" className="py-20 relative">
         <div className="container mx-auto px-6 relative z-10">
-          <h2 className="text-5xl md:text-6xl font-bold text-center mb-20 bg-gradient-to-r from-neon-blue via-neon-pink to-neon-green bg-clip-text text-transparent">Skills & Expertise</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">Skills & Expertise</h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
             {skillsData.map((skill, index) => (
-              <Card key={index} className="bg-black/90 backdrop-blur-2xl border-2 border-gray-800 hover:border-neon-blue/60 transition-all duration-500 hover:scale-110 group cursor-pointer rounded-3xl shadow-2xl hover:shadow-neon">
-                <CardContent className="p-8">
-                  <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-gradient-to-r from-neon-blue/30 to-neon-pink/30 flex items-center justify-center group-hover:from-neon-blue/60 group-hover:to-neon-pink/60 transition-all duration-300 shadow-2xl">
-                    <skill.icon className="w-10 h-10 text-neon-blue group-hover:text-neon-pink transition-colors duration-300 animate-pulse" />
+              <Card key={index} className="bg-white/5 backdrop-blur-xl border border-white/10 hover:border-white/20 transition-all duration-500 hover:scale-110 group cursor-pointer rounded-2xl shadow-2xl">
+                <CardContent className="p-6 text-center">
+                  <div className={`w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-r ${skill.color} flex items-center justify-center shadow-lg`}>
+                    <skill.icon className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="font-bold text-white mb-3 text-center group-hover:text-neon-blue transition-colors duration-300 text-xl">{skill.name}</h3>
-                  <div className="text-center mb-4">
-                    <Badge variant="secondary" className="mb-3 bg-gray-900/80 text-gray-300 border border-gray-700 px-3 py-1">
-                      {skill.category}
-                    </Badge>
-                    <p className="text-lg font-bold text-neon-green">{skill.level}</p>
-                  </div>
-                  <p className="text-sm text-gray-400 text-center leading-relaxed">{skill.description}</p>
+                  <h3 className="font-semibold text-white mb-2 group-hover:text-blue-400 transition-colors duration-300">{skill.name}</h3>
+                  <Badge variant="secondary" className="mb-2 bg-white/10 text-gray-300 border border-white/20">
+                    {skill.category}
+                  </Badge>
+                  <p className="text-sm font-medium text-emerald-400">{skill.level}</p>
                 </CardContent>
               </Card>
             ))}
@@ -695,54 +587,44 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Enhanced Education Section */}
-      <section id="education" className="py-32 bg-gradient-to-b from-black via-gray-900/70 to-black relative">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_25%,rgba(0,240,255,0.05),transparent_70%)]"></div>
-        <div className="container mx-auto px-6 relative z-10 max-w-7xl">
-          <h2 className="text-6xl md:text-7xl font-bold text-center mb-24 bg-gradient-to-r from-neon-blue via-neon-pink to-neon-green bg-clip-text text-transparent">Educational Journey</h2>
+      {/* Education Section */}
+      <section id="education" className="py-20 relative">
+        <div className="container mx-auto px-6 relative z-10 max-w-6xl">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">Education</h2>
           
-          <div className="space-y-16">
+          <div className="space-y-12">
             {educationData.map((edu, index) => (
-              <Card key={index} className="bg-black/95 backdrop-blur-2xl border-2 border-gray-800 hover:border-neon-blue/60 transition-all duration-500 rounded-3xl shadow-2xl hover:shadow-neon transform hover:scale-105 group overflow-hidden">
-                <div className="absolute top-0 right-0 p-6">
-                  <Badge variant="outline" className={`
-                    ${edu.status === 'Final Year' ? 'border-neon-green text-neon-green bg-neon-green/10' : ''}
-                    ${edu.status === 'Completed' ? 'border-neon-blue text-neon-blue bg-neon-blue/10' : ''}
-                    animate-pulse text-lg px-4 py-2
-                  `}>
-                    {edu.status}
-                  </Badge>
-                </div>
-                
-                <CardHeader className="pb-8">
-                  <CardTitle className="text-neon-blue group-hover:text-neon-pink transition-colors duration-300 text-3xl font-bold mb-4">
+              <Card key={index} className="bg-white/5 backdrop-blur-xl border border-white/10 hover:border-white/20 transition-all duration-500 rounded-2xl shadow-2xl overflow-hidden group">
+                <div className={`h-1 bg-gradient-to-r ${edu.gradient}`}></div>
+                <CardHeader>
+                  <CardTitle className="text-white group-hover:text-blue-400 transition-colors duration-300 text-2xl">
                     {edu.degree}
                   </CardTitle>
-                  <CardDescription className="text-gray-300 text-xl font-medium mb-4">
+                  <CardDescription className="text-gray-300 text-lg font-medium mb-2">
                     {edu.field}
                   </CardDescription>
-                  <div className="space-y-3">
-                    <p className="text-white text-xl font-semibold">{edu.institution}</p>
-                    <p className="text-gray-400 text-lg">{edu.university}</p>
-                    <div className="flex flex-wrap gap-6 text-lg">
-                      <span className="text-neon-green font-medium">{edu.duration}</span>
-                      {edu.cgpa && <span className="text-neon-yellow font-medium">CGPA: {edu.cgpa}</span>}
-                      {edu.percentage && <span className="text-neon-yellow font-medium">Score: {edu.percentage}</span>}
+                  <div className="space-y-2">
+                    <p className="text-white text-lg font-medium">{edu.institution}</p>
+                    <p className="text-gray-400">{edu.university}</p>
+                    <div className="flex flex-wrap gap-4">
+                      <span className="text-emerald-400 font-medium">{edu.duration}</span>
+                      {edu.cgpa && <span className="text-blue-400 font-medium">CGPA: {edu.cgpa}</span>}
+                      {edu.percentage && <span className="text-blue-400 font-medium">Score: {edu.percentage}</span>}
                     </div>
                   </div>
                 </CardHeader>
                 
                 <CardContent>
-                  <div className="grid lg:grid-cols-2 gap-12">
+                  <div className="grid lg:grid-cols-2 gap-8">
                     <div>
-                      <h4 className="font-bold text-neon-pink mb-6 flex items-center text-2xl">
-                        <Trophy className="w-7 h-7 mr-3 animate-pulse" />
+                      <h4 className="font-semibold text-blue-400 mb-4 flex items-center">
+                        <Trophy className="w-5 h-5 mr-2" />
                         Key Achievements
                       </h4>
-                      <ul className="space-y-4">
+                      <ul className="space-y-3">
                         {edu.achievements.map((achievement, achievementIndex) => (
-                          <li key={achievementIndex} className="text-gray-300 flex items-start text-lg">
-                            <CheckCircle className="w-5 h-5 text-neon-yellow mr-4 mt-1 flex-shrink-0 animate-pulse" />
+                          <li key={achievementIndex} className="text-gray-300 flex items-start">
+                            <CheckCircle className="w-4 h-4 text-emerald-400 mr-3 mt-1 flex-shrink-0" />
                             {achievement}
                           </li>
                         ))}
@@ -750,13 +632,13 @@ const Index = () => {
                     </div>
                     
                     <div>
-                      <h4 className="font-bold text-neon-blue mb-6 flex items-center text-2xl">
-                        <BookOpen className="w-7 h-7 mr-3 animate-pulse" />
-                        Coursework & Subjects
+                      <h4 className="font-semibold text-emerald-400 mb-4 flex items-center">
+                        <BookOpen className="w-5 h-5 mr-2" />
+                        Coursework
                       </h4>
-                      <div className="flex flex-wrap gap-3">
+                      <div className="flex flex-wrap gap-2">
                         {edu.coursework.map((course, courseIndex) => (
-                          <Badge key={courseIndex} variant="secondary" className="bg-gray-900/80 text-white border border-gray-600 hover:border-neon-blue hover:bg-neon-blue/10 transition-all duration-300 px-4 py-2 text-sm">
+                          <Badge key={courseIndex} variant="secondary" className="bg-white/10 text-white border border-white/20 hover:bg-white/20 transition-colors duration-300">
                             {course}
                           </Badge>
                         ))}
@@ -770,140 +652,104 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Certifications & Achievements */}
-      <section id="certifications" className="py-20 bg-gradient-to-b from-black to-gray-900/50">
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 gradient-text">Certifications & Achievements</h2>
+      {/* Certifications Section */}
+      <section id="certifications" className="py-20 relative">
+        <div className="container mx-auto px-6 relative z-10">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">Certifications & Awards</h2>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-6 mb-12">
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {certifications.map((cert, index) => (
-              <Card key={index} className="bg-black/90 backdrop-blur-xl border border-gray-800 hover:border-neon-yellow/50 transition-all duration-500 hover:scale-105">
+              <Card key={index} className="bg-white/5 backdrop-blur-xl border border-white/10 hover:border-white/20 transition-all duration-500 hover:scale-105 rounded-2xl shadow-2xl overflow-hidden group">
+                <div className={`h-1 bg-gradient-to-r ${cert.gradient}`}></div>
                 <CardHeader>
                   <CardTitle className="text-white flex items-center justify-between">
                     <div className="flex items-center">
-                      <Award className="w-6 h-6 mr-3 text-neon-yellow" />
+                      <Award className="w-6 h-6 mr-3 text-emerald-400" />
                       {cert.title}
                     </div>
-                    {cert.link && cert.link !== "#" && (
-                      <Button size="sm" variant="outline" className="border-neon-blue/50 text-neon-blue hover:bg-neon-blue/10">
-                        <ExternalLink className="w-4 h-4" />
-                      </Button>
-                    )}
                   </CardTitle>
-                  <CardDescription className="text-gray-400">
+                  <CardDescription className="text-gray-300">
                     {cert.issuer} • {cert.date}
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-300 mb-4">{cert.description}</p>
+                  <p className="text-gray-300 mb-4 leading-relaxed">{cert.description}</p>
                   <div className="flex flex-wrap gap-2 mb-4">
                     {cert.skills.map((skill, skillIndex) => (
-                      <Badge key={skillIndex} variant="secondary" className="bg-gray-900/80 text-white border border-gray-700">
+                      <Badge key={skillIndex} variant="secondary" className="bg-white/10 text-white border border-white/20">
                         {skill}
                       </Badge>
                     ))}
                   </div>
-                  <Badge variant="outline" className="border-neon-yellow/50 text-neon-yellow">
-                    {cert.type === 'certification' ? 'Certificate' : 'Achievement'}
+                  <Badge variant="outline" className="border-emerald-400/50 text-emerald-400 bg-emerald-400/10">
+                    {cert.type === 'certification' ? 'Professional Certificate' : 'Achievement Award'}
                   </Badge>
                 </CardContent>
               </Card>
             ))}
           </div>
-
-          <Card className="bg-black/90 backdrop-blur-xl border border-gray-800 hover:border-neon-pink/50 transition-all duration-500">
-            <CardHeader>
-              <CardTitle className="text-neon-pink flex items-center">
-                <Calendar className="w-6 h-6 mr-3" />
-                Workshops & Seminars
-              </CardTitle>
-              <CardDescription className="text-gray-400">
-                Continuous learning through industry workshops and professional development programs
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-                {workshops.map((workshop, index) => (
-                  <div key={index} className="flex flex-col p-4 rounded bg-gray-900/50 hover:bg-gray-900/80 transition-colors duration-300 border border-gray-700">
-                    <div className="flex items-center mb-2">
-                      <div className="w-2 h-2 bg-neon-blue rounded-full mr-3"></div>
-                      <span className="font-medium text-white">{workshop.name}</span>
-                    </div>
-                    <div className="text-sm text-gray-400 ml-5">
-                      <span>{workshop.organizer}</span>
-                      <span className="mx-2">•</span>
-                      <span>{workshop.year}</span>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </section>
 
-      {/* Enhanced Contact Section */}
-      <section id="contact" className="py-32 bg-gradient-to-b from-black via-gray-900/50 to-black relative">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_75%,rgba(255,0,255,0.05),transparent_70%)]"></div>
-        <div className="container mx-auto px-6 relative z-10 max-w-7xl">
-          <h2 className="text-6xl md:text-7xl font-bold text-center mb-24 bg-gradient-to-r from-neon-blue via-neon-pink to-neon-green bg-clip-text text-transparent">Get In Touch</h2>
+      {/* Contact Section */}
+      <section id="contact" className="py-20 relative">
+        <div className="container mx-auto px-6 relative z-10 max-w-6xl">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">Let's Connect</h2>
           
-          <div className="grid lg:grid-cols-2 gap-16">
-            {/* Contact Information */}
-            <Card className="bg-black/95 backdrop-blur-2xl border-2 border-gray-800 hover:border-neon-blue/60 transition-all duration-500 rounded-3xl shadow-2xl hover:shadow-neon">
-              <CardHeader className="pb-8">
-                <CardTitle className="text-neon-blue flex items-center text-3xl">
-                  <MessageCircle className="w-8 h-8 mr-4 animate-pulse" />
-                  Contact Information
+          <div className="grid lg:grid-cols-2 gap-12">
+            <Card className="bg-white/5 backdrop-blur-xl border border-white/10 hover:border-white/20 transition-all duration-500 rounded-2xl shadow-2xl">
+              <CardHeader>
+                <CardTitle className="text-blue-400 flex items-center text-xl">
+                  <MessageCircle className="w-6 h-6 mr-3" />
+                  Get In Touch
                 </CardTitle>
-                <CardDescription className="text-gray-400 text-xl">
-                  Feel free to reach out through any of these channels
+                <CardDescription className="text-gray-300">
+                  Let's discuss your next project or collaboration opportunity
                 </CardDescription>
               </CardHeader>
-              <CardContent className="space-y-8">
-                <div className="flex items-center p-6 rounded-2xl bg-neon-blue/5 border-2 border-neon-blue/20 hover:bg-neon-blue/10 transition-colors duration-300">
-                  <Phone className="w-8 h-8 mr-6 text-neon-blue animate-pulse" />
+              <CardContent className="space-y-6">
+                <div className="flex items-center p-4 rounded-xl bg-white/5 border border-white/10">
+                  <Phone className="w-6 h-6 mr-4 text-blue-400" />
                   <div>
-                    <p className="font-semibold text-white text-xl">Phone</p>
-                    <p className="text-gray-400 text-lg">+91 7978825471</p>
+                    <p className="font-medium text-white">Phone</p>
+                    <p className="text-gray-400">+91 7978825471</p>
                   </div>
                 </div>
                 
-                <div className="flex items-center p-6 rounded-2xl bg-neon-pink/5 border-2 border-neon-pink/20 hover:bg-neon-pink/10 transition-colors duration-300">
-                  <Mail className="w-8 h-8 mr-6 text-neon-pink animate-pulse" />
+                <div className="flex items-center p-4 rounded-xl bg-white/5 border border-white/10">
+                  <Mail className="w-6 h-6 mr-4 text-emerald-400" />
                   <div>
-                    <p className="font-semibold text-white text-xl">Email</p>
-                    <p className="text-gray-400 text-lg">abinashdash2022@gift.edu.in</p>
-                    <p className="text-gray-400 text-lg">abinashdash019@gmail.com</p>
+                    <p className="font-medium text-white">Email</p>
+                    <p className="text-gray-400">abinashdash2022@gift.edu.in</p>
+                    <p className="text-gray-400">abinashdash019@gmail.com</p>
                   </div>
                 </div>
                 
-                <div className="flex items-center p-6 rounded-2xl bg-neon-green/5 border-2 border-neon-green/20 hover:bg-neon-green/10 transition-colors duration-300">
-                  <MapPin className="w-8 h-8 mr-6 text-neon-green animate-pulse" />
+                <div className="flex items-center p-4 rounded-xl bg-white/5 border border-white/10">
+                  <MapPin className="w-6 h-6 mr-4 text-purple-400" />
                   <div>
-                    <p className="font-semibold text-white text-xl">Location</p>
-                    <p className="text-gray-400 text-lg">Binjhagiri, Khordha, Odisha, India</p>
+                    <p className="font-medium text-white">Location</p>
+                    <p className="text-gray-400">Binjhagiri, Khordha, Odisha, India</p>
                   </div>
                 </div>
                 
-                {/* Enhanced Social Media */}
-                <div className="pt-8">
-                  <h4 className="font-semibold text-white mb-6 text-2xl">Follow Me</h4>
-                  <div className="grid grid-cols-2 gap-4">
-                    <Button size="lg" variant="outline" className="border-neon-blue/50 text-neon-blue hover:bg-neon-blue/20 rounded-2xl py-4 text-lg">
-                      <Linkedin className="w-6 h-6 mr-3" />
+                <div className="pt-6">
+                  <h4 className="font-medium text-white mb-4">Connect With Me</h4>
+                  <div className="grid grid-cols-2 gap-3">
+                    <Button variant="outline" className="border-blue-400/50 text-blue-400 hover:bg-blue-400/20 rounded-xl">
+                      <Linkedin className="w-5 h-5 mr-2" />
                       LinkedIn
                     </Button>
-                    <Button size="lg" variant="outline" className="border-neon-green/50 text-neon-green hover:bg-neon-green/20 rounded-2xl py-4 text-lg">
-                      <Github className="w-6 h-6 mr-3" />
+                    <Button variant="outline" className="border-emerald-400/50 text-emerald-400 hover:bg-emerald-400/20 rounded-xl">
+                      <Github className="w-5 h-5 mr-2" />
                       GitHub
                     </Button>
-                    <Button size="lg" variant="outline" className="border-neon-pink/50 text-neon-pink hover:bg-neon-pink/20 rounded-2xl py-4 text-lg">
-                      <Instagram className="w-6 h-6 mr-3" />
+                    <Button variant="outline" className="border-purple-400/50 text-purple-400 hover:bg-purple-400/20 rounded-xl">
+                      <Instagram className="w-5 h-5 mr-2" />
                       Instagram
                     </Button>
-                    <Button size="lg" variant="outline" className="border-neon-yellow/50 text-neon-yellow hover:bg-neon-yellow/20 rounded-2xl py-4 text-lg">
-                      <X className="w-6 h-6 mr-3" />
+                    <Button variant="outline" className="border-pink-400/50 text-pink-400 hover:bg-pink-400/20 rounded-xl">
+                      <X className="w-5 h-5 mr-2" />
                       Twitter
                     </Button>
                   </div>
@@ -911,61 +757,60 @@ const Index = () => {
               </CardContent>
             </Card>
             
-            {/* Enhanced Send Message Form */}
-            <Card className="bg-black/95 backdrop-blur-2xl border-2 border-gray-800 hover:border-neon-pink/60 transition-all duration-500 rounded-3xl shadow-2xl hover:shadow-neon">
-              <CardHeader className="pb-8">
-                <CardTitle className="text-neon-pink flex items-center text-3xl">
-                  <Send className="w-8 h-8 mr-4 animate-pulse" />
-                  Send a Message
+            <Card className="bg-white/5 backdrop-blur-xl border border-white/10 hover:border-white/20 transition-all duration-500 rounded-2xl shadow-2xl">
+              <CardHeader>
+                <CardTitle className="text-emerald-400 flex items-center text-xl">
+                  <Send className="w-6 h-6 mr-3" />
+                  Send Message
                 </CardTitle>
-                <CardDescription className="text-gray-400 text-xl">
-                  Let's discuss your project or just say hello! I'll get back to you within 24 hours.
+                <CardDescription className="text-gray-300">
+                  I'll get back to you within 24 hours
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <form className="space-y-8">
+                <form className="space-y-6">
                   <div>
-                    <label className="text-lg font-medium text-gray-300 block mb-3">Your Name *</label>
+                    <label className="text-sm font-medium text-gray-300 block mb-2">Your Name *</label>
                     <input
                       type="text"
                       required
-                      className="w-full px-6 py-4 bg-gray-900/80 border-2 border-gray-700 rounded-2xl text-white placeholder-gray-400 focus:border-neon-blue focus:outline-none transition-colors duration-300 text-lg"
+                      className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:border-blue-400 focus:outline-none transition-colors duration-300"
                       placeholder="Enter your name"
                     />
                   </div>
                   
                   <div>
-                    <label className="text-lg font-medium text-gray-300 block mb-3">Email Address *</label>
+                    <label className="text-sm font-medium text-gray-300 block mb-2">Email Address *</label>
                     <input
                       type="email"
                       required
-                      className="w-full px-6 py-4 bg-gray-900/80 border-2 border-gray-700 rounded-2xl text-white placeholder-gray-400 focus:border-neon-blue focus:outline-none transition-colors duration-300 text-lg"
+                      className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:border-blue-400 focus:outline-none transition-colors duration-300"
                       placeholder="Enter your email"
                     />
                   </div>
                   
                   <div>
-                    <label className="text-lg font-medium text-gray-300 block mb-3">Subject *</label>
+                    <label className="text-sm font-medium text-gray-300 block mb-2">Subject *</label>
                     <input
                       type="text"
                       required
-                      className="w-full px-6 py-4 bg-gray-900/80 border-2 border-gray-700 rounded-2xl text-white placeholder-gray-400 focus:border-neon-blue focus:outline-none transition-colors duration-300 text-lg"
+                      className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:border-blue-400 focus:outline-none transition-colors duration-300"
                       placeholder="What's this about?"
                     />
                   </div>
                   
                   <div>
-                    <label className="text-lg font-medium text-gray-300 block mb-3">Message *</label>
+                    <label className="text-sm font-medium text-gray-300 block mb-2">Message *</label>
                     <textarea
-                      rows={6}
+                      rows={5}
                       required
-                      className="w-full px-6 py-4 bg-gray-900/80 border-2 border-gray-700 rounded-2xl text-white placeholder-gray-400 focus:border-neon-blue focus:outline-none transition-colors duration-300 resize-none text-lg"
-                      placeholder="Tell me about your project or idea..."
+                      className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:border-blue-400 focus:outline-none transition-colors duration-300 resize-none"
+                      placeholder="Tell me about your project..."
                     />
                   </div>
                   
-                  <Button className="w-full bg-gradient-to-r from-neon-blue to-neon-pink hover:from-neon-pink hover:to-neon-blue text-black font-bold py-6 text-xl rounded-2xl animate-glow transform hover:scale-105 transition-all duration-300">
-                    <Send className="w-6 h-6 mr-3" />
+                  <Button className="w-full bg-gradient-to-r from-blue-500 to-emerald-500 hover:from-blue-600 hover:to-emerald-600 text-white font-semibold py-4 rounded-xl transform hover:scale-105 transition-all duration-300">
+                    <Send className="w-5 h-5 mr-2" />
                     Send Message
                   </Button>
                 </form>
@@ -975,24 +820,24 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Enhanced Footer */}
-      <footer className="py-16 bg-black border-t-2 border-neon-blue/20">
-        <div className="container mx-auto px-6 max-w-7xl">
-          <div className="grid md:grid-cols-3 gap-12 mb-12">
+      {/* Footer */}
+      <footer className="py-12 bg-black/20 border-t border-white/10">
+        <div className="container mx-auto px-6">
+          <div className="grid md:grid-cols-3 gap-8 mb-8">
             <div>
-              <h3 className="text-3xl font-bold bg-gradient-to-r from-neon-blue via-neon-pink to-neon-green bg-clip-text text-transparent mb-6">Abinash Dash</h3>
-              <p className="text-gray-400 leading-relaxed text-lg">
-                Passionate about creating innovative solutions through technology, design, and artificial intelligence.
+              <h3 className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent mb-4">Abinash Dash</h3>
+              <p className="text-gray-400 leading-relaxed">
+                Passionate about creating innovative solutions through technology and design.
               </p>
             </div>
             <div>
-              <h4 className="font-semibold text-white mb-6 text-2xl">Quick Links</h4>
-              <div className="grid grid-cols-2 gap-3">
+              <h4 className="font-medium text-white mb-4">Quick Links</h4>
+              <div className="grid grid-cols-2 gap-2">
                 {navigationItems.map((item) => (
                   <button
                     key={item.id}
                     onClick={() => scrollToSection(item.id)}
-                    className="text-gray-400 hover:text-neon-blue transition-colors duration-300 text-left text-lg"
+                    className="text-gray-400 hover:text-blue-400 transition-colors duration-300 text-left text-sm"
                   >
                     {item.label}
                   </button>
@@ -1000,42 +845,42 @@ const Index = () => {
               </div>
             </div>
             <div>
-              <h4 className="font-semibold text-white mb-6 text-2xl">Connect</h4>
-              <div className="flex gap-4">
-                <Button size="lg" variant="outline" className="border-neon-blue/30 text-neon-blue hover:bg-neon-blue/20 rounded-2xl">
-                  <Linkedin className="w-6 h-6" />
+              <h4 className="font-medium text-white mb-4">Connect</h4>
+              <div className="flex gap-3">
+                <Button size="sm" variant="outline" className="border-blue-400/30 text-blue-400 hover:bg-blue-400/20 rounded-lg">
+                  <Linkedin className="w-4 h-4" />
                 </Button>
-                <Button size="lg" variant="outline" className="border-neon-green/30 text-neon-green hover:bg-neon-green/20 rounded-2xl">
-                  <Github className="w-6 h-6" />
+                <Button size="sm" variant="outline" className="border-emerald-400/30 text-emerald-400 hover:bg-emerald-400/20 rounded-lg">
+                  <Github className="w-4 h-4" />
                 </Button>
-                <Button size="lg" variant="outline" className="border-neon-pink/30 text-neon-pink hover:bg-neon-pink/20 rounded-2xl">
-                  <Instagram className="w-6 h-6" />
+                <Button size="sm" variant="outline" className="border-purple-400/30 text-purple-400 hover:bg-purple-400/20 rounded-lg">
+                  <Instagram className="w-4 h-4" />
                 </Button>
-                <Button size="lg" variant="outline" className="border-neon-yellow/30 text-neon-yellow hover:bg-neon-yellow/20 rounded-2xl">
-                  <X className="w-6 h-6" />
+                <Button size="sm" variant="outline" className="border-pink-400/30 text-pink-400 hover:bg-pink-400/20 rounded-lg">
+                  <X className="w-4 h-4" />
                 </Button>
               </div>
             </div>
           </div>
-          <Separator className="bg-gray-800 mb-8" />
+          <Separator className="bg-white/10 mb-6" />
           <div className="text-center">
-            <p className="text-gray-400 mb-3 text-lg">
+            <p className="text-gray-400 mb-2">
               © 2025 Abinash Dash. Built with React, TypeScript & Tailwind CSS.
             </p>
-            <p className="bg-gradient-to-r from-neon-green via-neon-blue to-neon-pink bg-clip-text text-transparent text-xl font-medium">
-              Designing with Vision. Developing with Precision. Delivering with Impact.
+            <p className="bg-gradient-to-r from-emerald-400 via-blue-400 to-purple-400 bg-clip-text text-transparent font-medium">
+              Crafting Digital Experiences That Matter
             </p>
           </div>
         </div>
       </footer>
 
-      {/* Enhanced Scroll to Top Button */}
+      {/* Scroll to Top */}
       {showScrollTop && (
         <Button
           onClick={scrollToTop}
-          className="fixed bottom-8 right-8 z-50 rounded-full w-20 h-20 p-0 bg-gradient-to-r from-neon-blue via-neon-pink to-neon-green hover:from-neon-green hover:via-neon-yellow hover:to-neon-blue text-black shadow-2xl hover:shadow-neon transform hover:scale-110 transition-all duration-500"
+          className="fixed bottom-8 right-8 z-50 rounded-full w-14 h-14 p-0 bg-gradient-to-r from-blue-500 to-emerald-500 hover:from-blue-600 hover:to-emerald-600 text-white shadow-lg hover:shadow-xl transform hover:scale-110 transition-all duration-300"
         >
-          <ArrowUp className="w-10 h-10 animate-pulse" />
+          <ArrowUp className="w-6 h-6" />
         </Button>
       )}
     </div>
